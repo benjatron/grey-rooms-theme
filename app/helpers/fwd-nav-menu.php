@@ -11,12 +11,12 @@
  * @param array $args {
  *  An array of arguments to pass, similar to those used for wp_nav_menu
  *
- *  @option string 'menu'         Desired menu. Accepts a menu ID, slug, name,
+ *  @option string 'menu_name'    Desired menu. Accepts a menu ID, slug, name,
  *                                or object
  *  @option string 'menu_class'   Base CSS class to use for the container block
  *                                which forms the menu
  *  @option string 'menu_id'      The ID that is applied to the container
- *                                element wich forms the menu. Default is a
+ *                                element which forms the menu. Default is a
  *                                variant of the menu slug
  *  @option boolean 'toggles'     Whether or not to include toggle buttons for
  *                                menu items with child lists
@@ -51,12 +51,11 @@ function fwd_nav_menu( $args = array() ) {
   $link = $args['top_links'];
 
   // Grabs menu locations and the items within the menu provided
-  $locations = get_nav_menu_locations();
-  if( !isset( $locations[$name] ) ):
+  if( !get_term( $name, 'nav_menu' ) ):
     echo 'That menu does not exist';
   else:
     // Sets the menu to be loaded and gets the menu items
-    $menu = get_term( $locations[$name], 'nav_menu' );
+    $menu = get_term( $name, 'nav_menu' );
     $items = wp_get_nav_menu_items( $menu->name );
     ?>
     <nav id="<?php echo $id; ?>" class="<?php echo $class; ?>">
