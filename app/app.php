@@ -35,12 +35,3 @@ require 'setup/theme-supports.php';
  * Theme menus
  */
 require 'menus/navigation-menus.php';
-
-/**
- * Theme sidebars
- */
-require 'sidebars/sidebars.php';
-
-/**
- * Theme widgets
- */
