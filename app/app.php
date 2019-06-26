@@ -8,17 +8,16 @@ require( get_stylesheet_directory( ) .  '/vendor/autoload.php' );
  * Helper functions
  */
 require 'helpers/fwd-nav-menu.php';
-require 'helpers/fwd-sub-nav.php';
-require 'helpers/get-nowrap-field.php';
-require 'helpers/get-partial.php';
-require 'helpers/get-picsum-url.php';
-require 'helpers/get-placeholder-url.php';
-require 'helpers/get-svg.php';
+require 'helpers/fwd-preload.php';
+require 'helpers/fwd-query-var.php';
+require 'helpers/fwd-register.php';
+require 'helpers/get-component.php';
+require 'helpers/get-layout.php';
+require 'helpers/nowrap-field.php';
+require 'helpers/picsum-url.php';
+require 'helpers/placeholder-url.php';
+require 'helpers/svg.php';
 require 'helpers/the-nested-links.php';
-require 'helpers/the-nowrap-field.php';
-require 'helpers/the-picsum-url.php';
-require 'helpers/the-placeholder-url.php';
-require 'helpers/the-svg.php';
 
 /**
  * Theme setup and supports
@@ -26,6 +25,7 @@ require 'helpers/the-svg.php';
 require 'setup/acf-save-location.php';
 require 'setup/admin-menu-remover.php';
 require 'setup/asset-loader.php';
+require 'setup/disable-emojis.php';
 require 'setup/image-sizes.php';
 require 'setup/show-active-template.php';
 require 'setup/theme-settings-page.php';
