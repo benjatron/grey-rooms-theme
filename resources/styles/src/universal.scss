@@ -1,0 +1,62 @@
+@charset 'utf-8';
+
+/*
+ * universal.scss
+ *
+ * This file contains any styles that should be loaded on every page of the
+ * project. This should include any 3rd-party libraries/themes, base element
+ * styles, font declarations, etc.
+ */
+
+/*
+ * Starter files
+ */
+@import './starter';
+
+/*
+ * Libraries
+ */
+// Destyle Reset
+@import './libraries/destyle';
+// WordPress Core
+@import './libraries/wp-core';
+
+/*
+ * Elements
+ * Styles universally applied to specific HTML elements
+ */
+// Content sectioning
+@import './base/elements/content-sectioning';
+// Form elements
+@import './base/elements/forms';
+// Images and multimedia
+@import './base/elements/image-multimedia';
+// Inline text semantics
+@import './base/elements/inline-text-semantics';
+// Sectioning root elements
+@import './base/elements/sectioning-root';
+// Table elements
+@import './base/elements/table-content';
+// Text content
+@import './base/elements/text-content';
+
+/*
+ * Vendor
+ * Settings and overrides that are specific to third-party libraries
+ */
+// Dialog polyfill
+@import './base/vendor/dialog-polyfill';
+// Gravity Forms
+@import './base/vendor/gravity-forms';
+// Lazysizes
+@import './base/vendor/lazysizes';
+
+/*
+ * Universal Components
+ * (optional) Only include components that appear on all pages
+ */
+
+
+/**
+ * Universal classes
+ */

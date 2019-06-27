@@ -1,47 +1,50 @@
 <?php
 /**
- * Template Name: General Content
- * Description: General content page
+ * Template Name: Homepage
+ * Description: Layout for the homepage / front page of the website
+ *
+ * This layout consists of:
+ *    Header
+ *    Main body
+ *    Footer
+ *
+ * The header contains:
+ *
+ * The main body consists of:
+ *
+ * The footer contains:
  */
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
-  <?php
-  // Header meta tags
-  get_partial('meta', 'head');
-  ?>
-
-  <body <?php body_class('homepage'); ?> ?>
-
+<html <?php language_attributes(); ?> >
+  <head>
     <?php
-    // Google Tag Manager <noscript> option
-    get_partial('meta', 'tag-manager-noscript');
+    // Header meta, scripts, and styles
+    fwd_preload( 'homepage', 'css' );
+    fwd_preload( 'homepage', 'js' );
 
-    // Included for the sake of plugins and child themes that rely on it.
-    do_action('get_header');
+    get_layout( 'header' );
+
+    wp_enqueue_style( 'homepage' );
     ?>
+  </head>
 
+  <body <?php body_class( 'homepage' ); ?>>
     <?php
-    // Website header area
+    // Body open meta and functions
+    get_layout( 'body-open' );
     ?>
     <header class="homepage__header">
     </header>
 
-    <?php
-    // Main content area
-    ?>
     <main class="homepage__main">
     </main>
 
-    <?php
-    // Footer content
-    ?>
     <footer class="homepage__footer">
     </footer>
-
     <?php
-    // Footer meta data and scripts. Includes the WP admin footer, etc.
-    get_partial('meta', 'foot');
+    wp_enqueue_script( 'homepage' );
+    get_component( 'meta', 'foot' );
     ?>
   </body>
 </html>

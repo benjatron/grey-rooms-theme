@@ -1,6 +1,5 @@
 <?php
 // Noscript option for Google Tag Manager
-
 if( get_field('google_tagManager', 'option') ):
   $gtm_id = get_field('google_tagManager', 'option');
 ?>

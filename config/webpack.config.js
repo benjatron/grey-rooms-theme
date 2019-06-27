@@ -18,7 +18,10 @@ project.styles = path.resolve(project.resources, 'styles');
 module.exports = {
   mode: 'production',
   entry: {
-    main: path.resolve(project.scripts, 'src/index.js')
+    // Universally-needed JS
+    universal: path.resolve(project.scripts, 'src/universal.js'),
+    // Page template JS
+    homepage: path.resolve(project.scripts, 'src/pages/homepage.js')
   },
   output: {
     filename: '[name].js',

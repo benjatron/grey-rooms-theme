@@ -1,0 +1,72 @@
+@charset 'utf-8';
+
+/*
+ * _starter.scss
+ *
+ * This file contains imports and setting that are SCSS-based. When imported,
+ * it should not output any CSS once compiled. This is a place for your library
+ * imports (such as Bourbon or other mixin libraries) as well as variable
+ * definitions, custom mixins, etc.
+ *
+ * This file should be included in universal.scss and all page template files.
+ */
+
+
+/*
+ * Vendor libraries to import, in whole or in part
+ */
+// Bourbon
+@import '~bourbon/core/bourbon';
+
+/*
+ * Functions
+ */
+// Asset helpers
+@import './base/tools/functions/asset-helper';
+// Black-based color generator
+@import './base/tools/functions/black';
+// Mathematical power calculator
+@import './base/tools/functions/power';
+// Pixel-to-rem unit converter
+@import './base/tools/functions/px-to-rem';
+// Unit stripper
+@import './base/tools/functions/unit-stripper';
+
+/*
+ * Placeholders
+ */
+// Input reset
+@import './base/tools/placeholders/input-reset';
+// List reset
+@import './base/tools/placeholders/list-reset';
+// Theme placeholders
+@import './base/tools/placeholders/theme';
+// Transparent overlay
+@import './base/tools/placeholders/overlay';
+// Off-screen preload
+@import './base/tools/placeholders/preload';
+
+/*
+ * Mixins
+ */
+// Font Loader
+@import './base/tools/mixins/font';
+// Select all headers
+@import './base/tools/mixins/headers';
+// Line-height cropper
+@import './base/tools/mixins/line-height-crop';
+
+/*
+ * Settings
+ *
+ * These files define values used throughout the theme, such as colors, font
+ * stacks, etc.
+ */
+// Animation-related
+@import './base/settings/animation';
+// Colors
+@import './base/settings/colors';
+// Sizing
+@import './base/settings/sizing';
+// Typography
+@import './base/settings/typography';
