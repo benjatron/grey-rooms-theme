@@ -1,6 +1,6 @@
 {
   "name": "fwd-boilerplate-theme",
-  "version": "1.1.0",
+  "version": "2.0",
   "description": "WordPress boilerplate theme for use as a starting point for development",
   "scripts": {
     "build": "webpack --config config/webpack.config.js",
@@ -11,7 +11,7 @@
   "license": "GPL-3.0",
   "browserslist": [
     "> 1%",
-    "last 1 version",
+    "last 2 versions",
     "Firefox ESR",
     "not dead"
   ],
