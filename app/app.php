@@ -22,8 +22,6 @@ require 'helpers/the-nested-links.php';
 /**
  * Theme setup and supports
  */
-require 'setup/acf-save-location.php';
-require 'setup/admin-menu-remover.php';
 require 'setup/asset-loader.php';
 require 'setup/disable-emojis.php';
 require 'setup/image-sizes.php';
