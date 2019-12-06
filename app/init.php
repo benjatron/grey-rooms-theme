@@ -45,9 +45,7 @@ require_once 'setup/remove-admin-menu-items.php';
 $setup = new FWD_Setup;
 
 // Registers page templates for the theme
-$templates = array(
-
-);
+$templates = array();
 $setup->register_page_templates( $templates );
 
 var_dump( $setup );

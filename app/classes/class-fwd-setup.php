@@ -15,7 +15,10 @@ class FWD_Setup {
   public $style_dir;
 
   public function __construct() {
+
     $this->set_directory_values();
+    $this->enqueue_assets();
+
   }
 
   /**
@@ -57,16 +60,6 @@ class FWD_Setup {
   }
 
   /**
-   * Registers page templates for the theme
-   */
-  public function register_page_templates( $templates = array() ) {
-    // Registers the array of templates at enqueue time
-    add_action( 'wp_enqueue_scripts', function() {
-      $this->register_all( $templates );
-    });
-  }
-
-  /**
   * Script/style registration shorthand
   *
   * This function acts as shorthand to register scripts and styles for
@@ -93,6 +86,16 @@ class FWD_Setup {
     foreach( $slugs as $slug ):
       $this->register( $slug );
     endforeach;
+  }
+
+  /**
+   * Registers page templates for the theme
+   */
+  public function register_page_templates( $templates = array() ) {
+    // Registers the array of templates at enqueue time
+    add_action( 'wp_enqueue_scripts', function() {
+      $this->register_all( $templates );
+    });
   }
 
 }
