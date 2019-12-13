@@ -5,14 +5,20 @@
 
 class FWD_Setup {
 
-  // Theme version
-  public $theme_version = "2.0b";
-
   // Location of ACF JSON files
   public $acf_directory;
 
   // Array of image sizes to register
   public $image_sizes;
+
+  // Theme menus
+  public $menus = array();
+
+  // Directory of component markup files
+  public $component_directory;
+
+  // Directory of layout markup files
+  public $layout_directory;
 
   // Directory of compiled script files
   public $script_directory;
@@ -20,15 +26,32 @@ class FWD_Setup {
   // Directory of compiles style files
   public $style_directory;
 
+  // Version of the theme used for cache-busting purposes
+  public $theme_version = "1.0";
+
   public function __construct() {
 
+    global $THEME_VERSION;
+    if( $THEME_VERSION ):
+      $this->theme_version = $THEME_VERSION;
+    endif;
+
+    $this->acf_directory = get_stylesheet_directory() . '/resources/acf/';
+    $this->component_directory = '/page-templates/components/';
+    $this->layout_directory = '/page-templates/layouts/';
+    $this->script_directory = get_stylesheet_directory() . '/resources/scripts/dist/';
+    $this->style_directory = get_stylesheet_directory() . '/resources/styles/dist/';
+
     $this->set_theme_supports();
-    $this->set_directory_values();
     $this->enqueue_assets();
     $this->set_acf_json_locations();
+    $this->create_theme_settings_page();
 
   }
 
+  /**
+   * Sets basic supports for theme
+   */
   protected function set_theme_supports() {
     add_action( 'after_setup_theme', function() {
       // Add support for 5.0+ editor styles
@@ -40,16 +63,52 @@ class FWD_Setup {
 
       // Enable plugins to manage the document title
       add_theme_support('title-tag');
+
+      // Add menu support
+      add_theme_support( 'menus' );
     });
   }
 
   /**
-   * Sets directory values for the theme
+   * Registers a theme settings page for ACF
    */
-  protected function set_directory_values() {
-    $this->acf_directory = get_stylesheet_directory() . '/resources/acf';
-    $this->script_directory = get_stylesheet_directory() . '/resources/scripts/dist/';
-    $this->style_directory = get_stylesheet_directory() . '/resources/styles/dist/';
+  protected function create_theme_settings_page() {
+    // Only initiates if ACF is active
+    // Otherwise, displays an admin notice
+    if( function_exists( 'acf_add_options_page' ) ):
+      acf_add_options_page(array(
+        'page_title'      => 'Theme Settings',
+        'menu_title'      => 'Theme Settings',
+        'menu_slug'       => 'theme-settings',
+        'capability'      => 'edit_posts',
+        'icon_url'        => 'dashicons-book-alt',
+        'position'        => 40,
+        'redirect'        => true,
+        'autoload'        => true,
+        'update_button'   => __('Update Settings', 'fwd'),
+        'updated_message' => __('Settings Updated', 'fwd')
+      ));
+    else:
+      add_action( 'admin_notices', function() {
+      ?>
+        <div class="notice notice-error">
+          <p>
+            This theme requires Advanced Custom Fields PRO to function properly. If you have not installed it, you can download it from your ACF <a href="https://www.advancedcustomfields.com/my-account/" target="_blank" rel="noopener noreferrer">account dashboard</a>. If you've installed it but have not activated it yet, you can do so from your <a href="<?php echo get_admin_url() . '/plugins.php'; ?> ">Plugins page</a>.
+          </p>
+        </div>
+      <?php
+      });
+    endif;
+  }
+
+  /**
+   * Sets menus for the theme
+   */
+  public function set_theme_menus( $menus ) {
+    $this->menus = $menus;
+    add_action( 'after_setup_theme', function() {
+      register_nav_menus( $this->menus );
+    });
   }
 
   /**
@@ -69,11 +128,11 @@ class FWD_Setup {
 
     // If universal scripts and styles are set, load them
     if( file_exists( $this->script_directory ) ):
-      wp_register_script( 'universal', $this->script_directory . 'universal.js', array( 'jquery' ), null, true );
+      wp_register_script( 'universal', $this->script_directory . 'universal.js', array( 'jquery' ), $this->theme_version, true );
       wp_enqueue_script( 'universal' );
     endif;
     if( file_exists( $this->style_directory ) ):
-      wp_register_style( 'universal', $this->style_directory . 'universal.css', false, null );
+      wp_register_style( 'universal', $this->style_directory . 'universal.css', false, $this->theme_version, 'all' );
       wp_enqueue_style( 'universal' );
     endif;
 
@@ -119,10 +178,10 @@ class FWD_Setup {
   */
   public function register( $slug ) {
     if( file_exists( $this->script_directory . $slug . '.js' ) ):
-      wp_register_script( $slug, $this->script_directory . $slug . '.js', array( 'universal' ), null, true );
+      wp_register_script( $slug, $this->script_directory . $slug . '.js', array( 'universal' ), $this->theme_version, true );
     endif;
     if( file_exists( $this->style_directory . $slug . '.css' ) ):
-      wp_register_style( $slug, $style_directory . $slug . '.css', false, null );
+      wp_register_style( $slug, $style_directory . $slug . '.css', array('universal'), $this->theme_version );
     endif;
   }
 
