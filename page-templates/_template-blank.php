@@ -20,7 +20,7 @@ $slug = $template->slug;
     wp_enqueue_style( $slug );
     ?>
   </head>
-  <body <?php body_class(); ?>>
+  <body <?php body_class( $slug ); ?>>
     <?php
     // Body open meta and functions
     FWD::the_layout( 'body-open' );
