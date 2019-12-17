@@ -23,7 +23,7 @@ abstract class FWD_Helper {
 
     // Uses $THEME values
     global $THEME;
-    return include( $THEME->component_directory . $location . '.php' );
+    return include( locate_template( $THEME->component_directory . $location . '.php', false, false ) );
   }
 
   /**
@@ -39,7 +39,7 @@ abstract class FWD_Helper {
   public function the_layout( $slug ) {
     // Uses $THEME values
     global $THEME;
-    return include( $THEME->layout_directory . $slug . '.php' );
+    return include( locate_template( $THEME->layout_directory . $slug . '.php', false, false ) );
   }
 
   /**
