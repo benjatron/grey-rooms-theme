@@ -13,5 +13,5 @@ FWD::the_component( null, 'meta/head' );
 // Google Tag Manager
 FWD::the_component( null, 'meta/google-tag-manager' );
 
-// Typekit
-FWD::the_component( null, 'meta/typekit' );
+// Adobe Fonts
+FWD::the_component( null, 'meta/adobe-fonts' );
