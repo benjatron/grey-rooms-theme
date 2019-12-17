@@ -111,7 +111,7 @@ abstract class FWD_Helper {
    * @link https://support.advancedcustomfields.com/forums/topic/removing-paragraph-tags-from-wysiwyg-fields/
    */
   function the_nowrap_field( $field_name, $id='' ) {
-    echo get_nowrap_field( $field_name, $id='' );
+    echo FWD_Helper::get_nowrap_field( $field_name, $id='' );
   }
 
   /**
@@ -313,7 +313,7 @@ abstract class FWD_Helper {
    * @return string         The SVG file contents
    */
   function the_svg( $file ) {
-    echo get_svg( $file );
+    echo FWD_Helper::get_svg( $file );
   }
 
   /**
