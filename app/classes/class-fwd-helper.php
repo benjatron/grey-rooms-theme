@@ -288,7 +288,16 @@ abstract class FWD_Helper {
    */
   function get_svg( $file ) {
     global $THEME;
-    return file_get_contents( get_stylesheet_directory_uri() . $THEME->image_directory . 'svg/' . $file . '.svg');
+    // First, check the dist folder
+    if( file_exists( $THEME->image_directory . 'dist/svg/' . $file . '.svg') ):
+      return file_get_contents( $THEME->image_directory . 'dist/svg/' . $file . '.svg');
+    // Fall back to the src folder if no processed version of the svg exists
+    elseif( file_exists( $THEME->image_directory . 'src/svg/' . $file . '.svg') ):
+      return file_get_contents( $THEME->image_directory . 'src/svg/' . $file . '.svg');
+    // Otherwise, return an error message
+    else:
+      return 'No SVG found by that name';
+    endif;
   }
 
   /**

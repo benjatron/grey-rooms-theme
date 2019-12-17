@@ -41,7 +41,7 @@ class FWD_Setup {
 
     $this->acf_directory = get_stylesheet_directory() . '/resources/acf/';
     $this->component_directory = get_stylesheet_directory() . '/page-templates/components/';
-    $this->image_directory = get_stylesheet_directory() . '/resources/images/dist/';
+    $this->image_directory = get_stylesheet_directory() . '/resources/images/';
     $this->layout_directory = get_stylesheet_directory() . '/page-templates/layouts/';
     $this->script_directory = get_stylesheet_directory() . '/resources/scripts/dist/';
     $this->style_directory = get_stylesheet_directory() . '/resources/styles/dist/';
