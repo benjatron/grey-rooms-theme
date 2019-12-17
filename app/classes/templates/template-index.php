@@ -5,8 +5,4 @@
  */
 class Template_Index extends FWD_Template {
 
-  public function __construct() {
-
-  }
-
 }
