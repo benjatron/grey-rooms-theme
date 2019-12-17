@@ -12,6 +12,7 @@ class FWD_Page {
   public $template_slug;
 
   public function __construct() {
+    global $THEME;
 
     $this->page_id = get_the_ID();
     $this->template_slug = $this->get_page_slug();

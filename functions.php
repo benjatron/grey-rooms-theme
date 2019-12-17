@@ -10,7 +10,7 @@
  * where something should go, poke around!
  */
 
-// ! Do not delete this value
+// ! Do not delete this code block
 $THEME_VERSION = "2.0b";
 
 // Composer files

@@ -17,6 +17,9 @@ class FWD_Setup {
   // Directory of component markup files
   public $component_directory;
 
+  // Directory for output images
+  public $image_directory;
+
   // Directory of layout markup files
   public $layout_directory;
 
@@ -37,8 +40,9 @@ class FWD_Setup {
     endif;
 
     $this->acf_directory = get_stylesheet_directory() . '/resources/acf/';
-    $this->component_directory = '/page-templates/components/';
-    $this->layout_directory = '/page-templates/layouts/';
+    $this->component_directory = get_stylesheet_directory() . '/page-templates/components/';
+    $this->image_directory = get_stylesheet_directory() . '/resources/images/dist/';
+    $this->layout_directory = get_stylesheet_directory() . '/page-templates/layouts/';
     $this->script_directory = get_stylesheet_directory() . '/resources/scripts/dist/';
     $this->style_directory = get_stylesheet_directory() . '/resources/styles/dist/';
 

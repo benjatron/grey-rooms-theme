@@ -1,2 +1,5 @@
 <?php
-?>test
+global $template;
+global $nav;
+
+?>
