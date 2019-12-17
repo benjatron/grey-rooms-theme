@@ -1,12 +1,26 @@
 {
   "cSpell.words": [
+    "browserslist",
+    "cookieconsent",
     "dashicons",
     "jetpack",
+    "js",
+    "lazysizes",
+    "mmenu",
+    "offcanvas",
+    "oncanvas",
     "picsum",
+    "polyfill",
     "prefetching",
+    "screenreader",
+    "scrollbugfix",
+    "smoothscroll",
     "staticize",
+    "stylelint",
+    "swiper",
     "tinymce",
     "typekit",
+    "wordpress",
     "wpautop",
     "wpemoji"
   ]
