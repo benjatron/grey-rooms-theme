@@ -13,16 +13,17 @@ abstract class FWD_Helper {
    * hack is necessary. To cut down on typing and improve readability, this
    * function imports a layout partial and keeps variables accessible.
    *
-   * @var string $folder      The folder(s) the layout partial resides in
-   * @var string $slug        The name of the partial file, without extension
+   * @var object $object      The object to pass to the component
+   * @var string $location    The location of the layout partial (without 
+   *                          extension) within the components folder
    *
    * @return mixed            The template file referenced
    */
-  public function the_component( $folder, $slug ) {
+  public function the_component( $COMPONENT, $location ) {
 
     // Uses $THEME values
     global $THEME;
-    return include( $THEME->component_directory . $folder . '/' . $slug . '.php' );
+    return include( $THEME->component_directory . $location . '.php' );
   }
 
   /**
@@ -94,6 +95,23 @@ abstract class FWD_Helper {
     endif;
     add_filter('acf_the_content', 'wpautop');
     return $field;
+  }
+
+  /**
+   * Echoes fields from get_nowrap_field()
+   *
+   * By default, the WYSIWYG editor in ACF will output paragraph tags
+   * automatically. In cases where there is only one paragraph, this can
+   * sometimes cause spacing issues. This function "gets" the field without those
+   * tags. Note: Only works with ACF WYSIWYG editor fields.
+   *
+   * @var string $field_name       The name of the field affected
+   * @var string $id               The ID of the post where the field is located
+   *                                (defaults to current post)
+   * @link https://support.advancedcustomfields.com/forums/topic/removing-paragraph-tags-from-wysiwyg-fields/
+   */
+  function the_nowrap_field( $field_name, $id='' ) {
+    echo get_nowrap_field( $field_name, $id='' );
   }
 
   /**
@@ -254,6 +272,74 @@ abstract class FWD_Helper {
    */
   function the_placeholder_url( $width, $height='', $text_to_display='' ) {
     echo FWD_Helper::get_placeholder_url( $width, $height='', $text_to_display='' );
+  }
+
+  /**
+   * Gets SVG file contents
+   *
+   * Inlining SVG elements isn't fun, so this does it for you. It brings in the
+   * entirety of the SVG file and should be placed between svg tags for more full
+   * control.
+   *
+   * @var string $file      The SVG filename to pull in, relative to the parent
+   *                        SVG dist folder
+   *
+   * @return string         The SVG file contents
+   */
+  function get_svg( $file ) {
+    global $THEME;
+    return file_get_contents( get_stylesheet_directory_uri() . $THEME->image_directory . 'svg/' . $file . '.svg');
+  }
+
+  /**
+   * Echoes SVG file contents from get_svg()
+   *
+   * Inlining SVG elements isn't fun, so this does it for you. It brings in the
+   * entirety of the SVG file and should be placed between svg tags for more full
+   * control.
+   *
+   * @var string $file      The SVG filename to pull in, relative to the parent
+   *                        SVG dist folder
+   *
+   * @return string         The SVG file contents
+   */
+  function the_svg( $file ) {
+    echo get_svg( $file );
+  }
+
+  /**
+   * Creates a human-readable unordered list for sitemap purposes
+   *
+   * @var string $parentClass   The CSS class of the parent element
+   * @var string $links         The array of links to use for the sitemap
+   *
+   * @return mixed              A nested list of links
+   */
+
+  function the_nested_links( $parentClass, $links ) {
+    ?>
+    <ul class="<?php echo $parentClass; ?>__list">
+      <?php
+      foreach( $links as $link ):
+        $item = $link['link'];
+        $title = $item->post_title;
+        $url = get_permalink( $item->ID );
+        ?>
+        <li class="<?php echo $parentClass; ?>__item">
+          <a class="<?php echo $parentClass; ?>__link" href="<?php echo $url; ?>">
+            <?php echo $title; ?>
+          </a>
+          <?php
+          if( $link['check'] ):
+            the_nested_links( $parentClass, $link['children'] );
+          endif;
+          ?>
+        </li>
+        <?php
+      endforeach;
+      ?>
+    </ul>
+    <?php
   }
 
 }

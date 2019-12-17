@@ -10,7 +10,10 @@
  * where something should go, poke around!
  */
 
-// ! Do not delete this code block
+/**
+ * Defines the theme version for the purpose of file loading
+ * ! Do not delete.
+ */
 $THEME_VERSION = "2.0b";
 
 // Composer files

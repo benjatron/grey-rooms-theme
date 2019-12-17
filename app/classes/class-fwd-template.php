@@ -3,19 +3,19 @@
  * Base page class
  */
 
-class FWD_Page {
+class FWD_Template {
 
   // The ID for the page
-  public $page_id;
+  public $id;
 
   // The slug of the page template used
-  public $template_slug;
+  public $slug;
 
   public function __construct() {
-    global $THEME;
 
-    $this->page_id = get_the_ID();
-    $this->template_slug = $this->get_page_slug();
+    $this->id = get_the_ID();
+    $this->slug = $this->get_template_slug();
+
   }
 
   /**
@@ -25,7 +25,7 @@ class FWD_Page {
  *
  * @var string $result  The truncated page template slug
  */
-  public function get_page_slug() {
+  public function get_template_slug() {
     $slug = get_page_template_slug( $this->page_id );
 
     // Remove substrings from $slug
@@ -36,7 +36,7 @@ class FWD_Page {
     $result = str_replace( $strings, '', $slug );
 
     // If the result is empty, set to "default"
-    if( empty( $result) ):
+    if( empty( $result ) ):
       $result = 'default';
     endif;
 
