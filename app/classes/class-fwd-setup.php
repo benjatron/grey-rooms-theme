@@ -185,7 +185,7 @@ class FWD_Setup {
       wp_register_script( $slug, $this->script_directory . $slug . '.js', array( 'universal' ), $this->theme_version, true );
     endif;
     if( file_exists( $this->style_directory . $slug . '.css' ) ):
-      wp_register_style( $slug, $style_directory . $slug . '.css', array('universal'), $this->theme_version );
+      wp_register_style( $slug, $this->style_directory . $slug . '.css', array('universal'), $this->theme_version );
     endif;
   }
 
