@@ -11,7 +11,6 @@ module.exports = {
         }
       ]
     },
-    'postcss-custom-properties': {},
     'postcss-dialog-polyfill': {}
   }
 }

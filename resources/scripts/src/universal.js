@@ -8,8 +8,12 @@ import '../../styles/src/universal.scss';
 /**
  * Vendor libraries and plugin settings
  */
+// Cookie consent
+import './vendor/cookieconsent';
 // Dialog polyfill
 import './vendor/dialog-polyfill';
+// Instant.page
+import './vendor/instant-page';
 // Lazysizes
 import './vendor/lazysizes';
 // Smoothscroll Polyfill

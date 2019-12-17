@@ -2,18 +2,16 @@
 /**
  * Universal header content
  */
+use FWD_Helper as FWD;
 
 // WordPress head() function
 wp_head();
 
-// Header metatags
-get_component( 'meta', 'head' );
+// Header meta tags
+FWD::the_component( null, 'meta/head' );
 
 // Google Tag Manager
-get_component( 'meta', 'google-tag-manager' );
+FWD::the_component( null, 'meta/google-tag-manager' );
 
-// Lead Forensics
-get_component( 'meta', 'lead-forensics' );
-
-// Typekit
-get_component( 'meta', 'typekit' );
+// Adobe Fonts
+FWD::the_component( null, 'meta/adobe-fonts' );

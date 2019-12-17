@@ -1,10 +1,8 @@
 <?php
 // Markup to be fired after the opening <body> tag
+use FWD_Helper as FWD;
 
 // Noscript option for Google Tag Manager
-get_component( 'meta', 'gtm-noscript' );
-
-// Noscript option for Lead Forensics
-get_component( 'meta', 'lf-noscript' );
+FWD::the_component( null, 'meta/gtm-noscript' );
 
 wp_body_open();

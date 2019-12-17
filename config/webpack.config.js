@@ -1,7 +1,6 @@
 const path = require('path');
 
 // Require our plugins
-const MagicImporter = require('node-sass-magic-importer');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
@@ -64,7 +63,6 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              importer: MagicImporter(),
               sourceMap: true
             }
           }

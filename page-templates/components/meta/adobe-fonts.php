@@ -1,14 +1,14 @@
 <?php
-// Typekit integration
-// @see https://helpx.adobe.com/fonts/using/embed-codes.html
-if( get_field('typekit_id', 'option') ):
-  $typekit_id = get_field('typekit_id', 'option');
+// Adobe Fonts integration
+$fonts = get_field( 'site_adobeFonts', 'option' );
+if( true === $fonts['check'] ):
+  $id = $fonts['id'];
 ?>
   <link rel="preconnect" href="https://use.typekit.net/" crossorigin>
   <script>
     (function(d) {
       var config = {
-        kitId: '<?php echo $typekit_id; ?>',
+        kitId: '<?php echo $id; ?>',
         scriptTimeout: 3000,
         async: true
       },

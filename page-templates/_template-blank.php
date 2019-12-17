@@ -1,4 +1,7 @@
 <?php
+/**
+ * Template Name: Blank Template
+ */
 use FWD_Helper as FWD;
 
 $template = new Template_Index;

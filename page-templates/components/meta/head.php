@@ -1,6 +1,6 @@
 <?php
 /**
- * Metatags and other links for the <head> area of the page
+ * Meta tags and other links for the <head> area of the page
  */
 ?>
 <meta charset="utf-8">
