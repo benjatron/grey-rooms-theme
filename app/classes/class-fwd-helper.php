@@ -6,6 +6,23 @@
 abstract class FWD_Helper {
 
   /**
+   * Generic console logger for error messages
+   * 
+   * @var string $output      The output message
+   * @var bool $with_tags     Whether to include <script> tags
+   * 
+   * @return mixed            The console message
+   */
+  protected function console_log( $output, $with_tags = true ) {
+    $code = 'console.log(' . json_encode( "PHP Error: {$output}", JSON_HEX_TAG ) . ');';
+    if( $with_tags ):
+      $code = "<script>{$code}</script>";
+    endif;
+
+    echo $code;
+  }
+
+  /**
    * Includes a component into a page
    *
    * Because get_template_part() does not bring all variables with it, it's not
@@ -23,7 +40,12 @@ abstract class FWD_Helper {
 
     // Uses $THEME values
     global $THEME;
-    return include( locate_template( $THEME->component_directory . $location . '.php', false, false ) );
+
+    if( locate_template( $THEME->component_directory . $location . '.php', false, false ) ):
+      return include( locate_template( $THEME->component_directory . $location . '.php', false, false ) );
+    else:
+      FWD_Helper::console_log( "FWD_Helper::the_component( '{$location}' ) failed" );
+    endif;
   }
 
   /**
@@ -39,7 +61,12 @@ abstract class FWD_Helper {
   public function the_layout( $slug ) {
     // Uses $THEME values
     global $THEME;
-    return include( locate_template( $THEME->layout_directory . $slug . '.php', false, false ) );
+
+    if( locate_template( $THEME->layout_directory . $slug . '.php', false, false ) ):
+      return include( locate_template( $THEME->layout_directory . $slug . '.php', false, false ) );
+    else:
+      FWD_Helper::console_log( "FWD_Helper::the_layout( '{$slug}' ) failed" );
+    endif;
   }
 
   /**
@@ -57,19 +84,21 @@ abstract class FWD_Helper {
 
     // If the file is CSS, echo this
     if(
-      'css' == strtolower($type) ||
-      'style' == strtolower($type)
+      'css' == strtolower($type) &&
+      file_exists( $THEME->style_directory . $handle . '.css' )
     ):
       $result = "<link rel='preload' href='" . $THEME->style_directory . $handle . ".css' as='style' />\n";
+      echo $result;
     // If the file is JS, echo this
     elseif(
-      'js' == strtolower($type) ||
-      'script' == strtolower($type)
+      'js' == strtolower($type) &&
+      file_exists( $THEME->script_directory . $handle . '.js' )
     ):
       $result = "<link rel='preload' href='" . $THEME->script_directory . $handle . ".js' as='script' />\n";
+      echo $result;
+    else:
+      FWD_Helper::console_log( "FWD_Helper::preload( '{$handle}', '{$type}' ) failed" );
     endif;
-
-    echo $result;
   }
 
   /**
@@ -112,40 +141,6 @@ abstract class FWD_Helper {
    */
   function the_nowrap_field( $field_name, $id='' ) {
     echo FWD_Helper::get_nowrap_field( $field_name, $id='' );
-  }
-
-  /**
-   * Sets component variables to specific ACF field names
-   * 
-   * @var string  $var      The name of the variable to set
-   * @var string  $field    The ACF field value to reference
-   * @var string  $id       The post ID for ACF to reference
-   * 
-   * @return bool
-   */
-  public function set_component_field( $component = '', $var = '', $field = '', $id = '' ) {
-    global ${$component};
-
-    if( function_exists( 'get_field') ):
-      if( get_field( $field, $id) ):
-        ${$component}->$var = get_field( $field, $id ) ;
-        return true;
-      else:
-        return false;
-      endif;
-    endif;
-  }
-
-    /**
-   * Sets component variables to input strings
-   * 
-   * @var string  $var      The name of the variable to set
-   * @var string  $value    The string value assign
-   * @var string  $id       The post ID for ACF to reference
-   */
-  public function set_component_var( $component = '', $var = '', $value = '' ) {
-    global ${$component};
-    ${$component}->$var = $value;
   }
 
   /**
@@ -296,7 +291,7 @@ abstract class FWD_Helper {
       return file_get_contents( $THEME->image_directory . 'src/svg/' . $file . '.svg');
     // Otherwise, return an error message
     else:
-      return 'No SVG found by that name';
+      FWD_Helper::console_log( "FWD_Helper::get_svg( '{$file}' ) failed" );
     endif;
   }
 
