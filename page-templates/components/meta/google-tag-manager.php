@@ -1,7 +1,9 @@
 <?php
 // Google Tag Manager integration
-$gtm = get_field( 'site_meta_gtm', 'option' );
-if( true === $gtm['check'] ):
+
+// Get Google Tag Manager data from passed $COMPONENT
+$gtm = $COMPONENT['gtm'];
+if( true === $gtm['active'] ):
   $id = $gtm['id'];
 ?>
   <link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin>
