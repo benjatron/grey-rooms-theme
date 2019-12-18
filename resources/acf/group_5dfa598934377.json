@@ -3,9 +3,9 @@
     "title": "Theme - Meta",
     "fields": [
         {
-            "key": "field_5dfa599603a21",
-            "label": "Google Tag Manager",
-            "name": "meta_gtm",
+            "key": "field_5dfa6f9b828c9",
+            "label": "Meta Options",
+            "name": "meta",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -18,113 +18,130 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5dfa59af03a22",
-                    "label": "Activate Google Tag Manager?",
-                    "name": "check",
-                    "type": "true_false",
+                    "key": "field_5dfa6fb7828ca",
+                    "label": "Google Tag Manager",
+                    "name": "gtm",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "30",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5dfa6fd1828cb",
+                            "label": "Activate Google Tag Manager?",
+                            "name": "active",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5dfa6ffa828cd",
+                            "label": "Tag Manager ID",
+                            "name": "id",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5dfa6fd1828cb",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
                 },
                 {
-                    "key": "field_5dfa59d603a23",
-                    "label": "Tag Manager ID",
-                    "name": "id",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5dfa59af03a22",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "70",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
-        },
-        {
-            "key": "field_5dfa5a419a27f",
-            "label": "Adobe Fonts",
-            "name": "meta_adobeFonts",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_5dfa5a419a280",
-                    "label": "Activate Adobe Fonts?",
-                    "name": "check",
-                    "type": "true_false",
+                    "key": "field_5dfa707beb273",
+                    "label": "Adobe Fonts",
+                    "name": "adobe_fonts",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "30",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
-                    "key": "field_5dfa5a419a281",
-                    "label": "Project ID",
-                    "name": "id",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5dfa5a419a280",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "70",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5dfa707beb274",
+                            "label": "Activate Adobe Fonts?",
+                            "name": "active",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5dfa707beb275",
+                            "label": "Project ID",
+                            "name": "id",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5dfa707beb274",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
                 }
             ]
         }
@@ -146,5 +163,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1576688220
+    "modified": 1576694234
 }

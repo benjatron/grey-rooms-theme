@@ -1,7 +1,9 @@
 <?php
 // Adobe Fonts integration
-$fonts = get_field( 'site_meta_adobeFonts', 'option' );
-if( true === $fonts['check'] ):
+
+// Get Adobe Fonts data from passed $COMPONENT
+$fonts = $COMPONENT['adobe_fonts'];
+if( true === $fonts['active'] ):
   $id = $fonts['id'];
 ?>
   <link rel="preconnect" href="https://use.typekit.net/" crossorigin>
