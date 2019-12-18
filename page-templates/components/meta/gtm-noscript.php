@@ -1,6 +1,6 @@
 <?php
 // Noscript option for Google Tag Manager
-$gtm = get_field( 'site_gtm', 'option' );
+$gtm = get_field( 'site_meta_gtm', 'option' );
 if( true === $gtm['check'] ):
   $id = $gtm['id'];
 ?>

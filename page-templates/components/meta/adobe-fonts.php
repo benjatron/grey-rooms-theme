@@ -1,6 +1,6 @@
 <?php
 // Adobe Fonts integration
-$fonts = get_field( 'site_adobeFonts', 'option' );
+$fonts = get_field( 'site_meta_adobeFonts', 'option' );
 if( true === $fonts['check'] ):
   $id = $fonts['id'];
 ?>

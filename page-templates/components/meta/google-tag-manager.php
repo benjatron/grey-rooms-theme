@@ -1,6 +1,6 @@
 <?php
 // Google Tag Manager integration
-$gtm = get_field( 'site_gtm', 'option' );
+$gtm = get_field( 'site_meta_gtm', 'option' );
 if( true === $gtm['check'] ):
   $id = $gtm['id'];
 ?>
