@@ -19,10 +19,10 @@
             "endpoint": 0
         },
         {
-            "key": "field_5df93988f0823",
-            "label": "Google Tag Manager",
-            "name": "site_gtm",
-            "type": "group",
+            "key": "field_5dfa5a6946563",
+            "label": "Theme Meta Settings",
+            "name": "site",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -31,118 +31,13 @@
                 "class": "",
                 "id": ""
             },
+            "clone": [
+                "group_5dfa598934377"
+            ],
+            "display": "seamless",
             "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_5df939d1a82ed",
-                    "label": "Activate Google Tag Manager?",
-                    "name": "check",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "30",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
-                    "key": "field_5df93a07a82ee",
-                    "label": "Tag Manager ID",
-                    "name": "id",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5df939d1a82ed",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "70",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
-        },
-        {
-            "key": "field_5df93a7310ad9",
-            "label": "Adobe Fonts",
-            "name": "site_adobeFonts",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_5df93a7310ada",
-                    "label": "Activate Adobe Fonts?",
-                    "name": "check",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "30",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
-                    "key": "field_5df93a7310adb",
-                    "label": "Project ID",
-                    "name": "id",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5df93a7310ada",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "70",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
+            "prefix_label": 0,
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -162,5 +57,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Theme-wide settings",
-    "modified": 1576614814
+    "modified": 1576688262
 }
