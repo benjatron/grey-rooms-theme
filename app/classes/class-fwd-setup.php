@@ -29,6 +29,9 @@ class FWD_Setup {
   // Directory of compiles style files
   public $style_directory;
 
+  // Array of templates
+  public $templates;
+
   // Version of the theme used for cache-busting purposes
   public $theme_version = "1.0";
 
@@ -47,7 +50,7 @@ class FWD_Setup {
     $this->style_directory = get_stylesheet_directory_uri() . '/resources/styles/dist/';
 
     $this->set_theme_supports();
-    $this->enqueue_assets();
+    add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ), 100 );
     $this->set_acf_json_locations();
     $this->create_theme_settings_page();
 
@@ -120,6 +123,7 @@ class FWD_Setup {
    */
   public function enqueue_assets() {
     // Removes Gutenberg block styles from the queue
+
     wp_dequeue_style( 'wp-block-library' );
     wp_dequeue_style( 'wp-block-library-theme' );
   
@@ -131,16 +135,12 @@ class FWD_Setup {
     endif;
 
     // If universal scripts and styles are set, load them
-    if( file_exists( $this->script_directory ) ):
-      wp_register_script( 'universal', $this->script_directory . 'universal.js', array( 'jquery' ), $this->theme_version, true );
-      wp_enqueue_script( 'universal' );
-    endif;
-    if( file_exists( $this->style_directory ) ):
-      wp_register_style( 'universal', $this->style_directory . 'universal.css', false, $this->theme_version, 'all' );
-      wp_enqueue_style( 'universal' );
-    endif;
+    wp_register_script( 'universal', $this->script_directory . 'universal.js', array( 'jquery' ), $this->theme_version, true );
+    wp_enqueue_script( 'universal' );
+    wp_register_style( 'universal', $this->style_directory . 'universal.css', false, $this->theme_version, 'all' );
+    wp_enqueue_style( 'universal' );
 
-    add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ), 100 );
+    $this->register_page_templates($this->templates);
 
     // If Gravity Forms is installed, load it in the footer
     add_filter( 'gform_init_scripts_footer', '__return_true' );
@@ -181,12 +181,8 @@ class FWD_Setup {
   * @var string $slug      The name of the file to register
   */
   public function register( $slug ) {
-    if( file_exists( $this->script_directory . $slug . '.js' ) ):
-      wp_register_script( $slug, $this->script_directory . $slug . '.js', array( 'universal' ), $this->theme_version, true );
-    endif;
-    if( file_exists( $this->style_directory . $slug . '.css' ) ):
-      wp_register_style( $slug, $this->style_directory . $slug . '.css', array('universal'), $this->theme_version );
-    endif;
+    wp_register_script( $slug, $this->script_directory . $slug . '.js', array( 'universal' ), $this->theme_version, true );
+    wp_register_style( $slug, $this->style_directory . $slug . '.css', array('universal'), $this->theme_version );
   }
 
   /**
@@ -211,9 +207,7 @@ class FWD_Setup {
    */
   public function register_page_templates( $templates = array() ) {
     // Registers the array of templates at enqueue time
-    add_action( 'wp_enqueue_scripts', function() {
-      $this->register_all( $templates );
-    });
+    $this->register_all( $templates );
   }
 
 

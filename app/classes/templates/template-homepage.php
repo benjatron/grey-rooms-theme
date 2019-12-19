@@ -1,9 +1,9 @@
 <?php
 /**
- * Blank template class. The passed $acf_prefix assigns fields that are used 
+ * Homepage template class. The passed $acf_prefix assigns fields that are used 
  * for reference
  */
-class Template_Blank extends FWD_Template {
+class Template_Homepage extends FWD_Template {
 
   // Template variables
 
@@ -13,6 +13,7 @@ class Template_Blank extends FWD_Template {
     $this->slug = $this->get_template_slug();
     
     // Instantiate components here
+
   }
 
 }

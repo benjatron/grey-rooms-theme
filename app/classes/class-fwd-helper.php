@@ -84,17 +84,15 @@ abstract class FWD_Helper {
 
     // If the file is CSS, echo this
     if(
-      'css' == strtolower($type) &&
-      file_exists( $THEME->style_directory . $handle . '.css' )
+      'css' == strtolower($type)
     ):
-      $result = "<link rel='preload' href='" . $THEME->style_directory . $handle . ".css' as='style' />\n";
+      $result = "<link rel='preload' href='{$THEME->style_directory}{$handle}.css?ver={$THEME->theme_version}' as='style' />\n";
       echo $result;
     // If the file is JS, echo this
     elseif(
-      'js' == strtolower($type) &&
-      file_exists( $THEME->script_directory . $handle . '.js' )
+      'js' == strtolower($type)
     ):
-      $result = "<link rel='preload' href='" . $THEME->script_directory . $handle . ".js' as='script' />\n";
+      $result = "<link rel='preload' href='{$THEME->script_directory}{$handle}.js?ver={$THEME->theme_version}' as='script' />\n";
       echo $result;
     else:
       FWD_Helper::console_log( "FWD_Helper::preload( '{$handle}', '{$type}' ) failed" );

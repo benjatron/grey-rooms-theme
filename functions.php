@@ -14,7 +14,7 @@
  * Defines the theme version for the purpose of file loading
  * ! Do not delete.
  */
-$THEME_VERSION = "2.0.1";
+$THEME_VERSION = "1.0";
 
 // Composer files
 require_once __DIR__ . '/vendor/autoload.php';
@@ -36,7 +36,8 @@ $THEME->remove_admin_menus();
 // Adds nav menus
 $menus = array(
   // Location         Label                 text-domain
-  'primary_nav' => __('Primary Navigation', 'fwd')
+  'primary_nav' => __('Primary Navigation', 'fwd'),
+  'quick_links' => __('Quick Links', 'fwd')
 );
 $THEME->set_theme_menus($menus);
 
@@ -50,8 +51,9 @@ $THEME->disable_emojis();
 $THEME->set_the_excerpt();
 
 // Registers page templates for the theme
-$templates = array();
-$THEME->register_page_templates( $templates );
+$THEME->templates = array(
+  'homepage'
+);
 
 // Sets image sizes for the theme, in pixel widths
 $image_sizes = array(
