@@ -3,7 +3,13 @@
  * FWD Navigation class and methods
  */
 
-abstract class FWD_Nav extends FWD_Component {
+class FWD_Nav {
+
+  public function __construct( $args ) {
+
+    // Outputs a menu with the passed arguments
+    $this->the_menu( $args );
+  }
 
   /**
    * Displays a navigation menu with custom markup
@@ -140,7 +146,7 @@ abstract class FWD_Nav extends FWD_Component {
    *
    * @param array $args           Navigation menu arguments, similar to
    *                              wp_nav_menu()
-   * @param array $items          The contens of the menu to be created and
+   * @param array $items          The contents of the menu to be created and
    *                              checked against
    * @param string $currentID     The ID of the post to start the submenu for
    *

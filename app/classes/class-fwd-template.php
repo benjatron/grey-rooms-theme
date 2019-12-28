@@ -16,15 +16,23 @@ class FWD_Template {
     $this->id = get_the_ID();
     $this->slug = $this->get_template_slug();
 
+    $this->build_components();
+
+    $this->footer = new Component_Footer( 'site_footer', 'option' );
   }
 
   /**
- * Returns a page template slug without a prefix directory and ending '.php'
- *
- * @var string $id      (optional) The id of the post being queried
- *
- * @var string $result  The truncated page template slug
- */
+   * Generic component builder. Meant to be overwritten
+   */
+  public function build_components() {}
+
+  /**
+   * Returns a page template slug without a prefix directory and ending '.php'
+   *
+   * @var string $id      (optional) The id of the post being queried
+   *
+   * @var string $result  The truncated page template slug
+   */
   public function get_template_slug() {
     $slug = get_page_template_slug( $this->page_id );
 

@@ -344,4 +344,50 @@ abstract class FWD_Helper {
     <?php
   }
 
+  /**
+   * Using classes and data attributes from Lazysizes, echoes the <img> tag of 
+   * a responsive image
+   * 
+   * @var string $classes     The CSS classes to pass to the image
+   * @var array $image        The array of WordPress image data
+   * @var int $max_width      The widest the image should appear
+   * @var bool $blur          Whether or not the image should "blur up"
+   * 
+   * @return string
+   */
+  function the_lazy_image( $classes, $image, $max_width = 9999, $blur = true ) {
+
+    global $THEME;
+    $sizes = $THEME->image_sizes;
+
+    // If the image should "blur up", add that class
+    if( $blur ):
+      echo "<img class=\"{$classes} lazyload lazyload--blurUp\" ";
+    else:
+      echo "<img class=\"{$classes} lazyload\" ";
+    endif;
+
+    // Add the image alt, if it exists
+    if( $image['alt'] ):
+      echo "alt=\"{$image['alt']}\" ";
+    endif;
+
+    // Add data-sizes and preload sizes
+    echo "data-sizes=\"auto\" data-src=\"{$image['sizes']['preload']}\" data-srcset=\"";
+
+    // Echoes the data-srcset values
+    echo "{$image['sizes']['preload']} 64w, ";
+    $w = 65; // Sets initial width needed in for loop
+    for( $i=0; $i<count($sizes); $i++ ):
+      // Only output values if $max_width hasn't been exceeded
+      if( $sizes[$i] <= $max_width ):
+        echo $image['sizes'][$sizes[$i].'w'] . ' ' . $w . 'w, ';
+        $w = ( $sizes[$i] + 1 );
+      endif;
+    endfor;
+
+    // Close the image tag
+    echo "\"/>";
+  }
+
 }

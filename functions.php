@@ -75,6 +75,7 @@ $image_sizes = array(
   1600,
   1920,
   2560,
-  3840
+  3840,
+  4096
 );
 $THEME->set_image_sizes( $image_sizes );

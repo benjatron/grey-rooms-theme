@@ -6,6 +6,8 @@ use FWD_Helper as FWD;
 
 $template = new Template_Homepage('homepage');
 $slug = $template->slug;
+
+$footer = $template->footer;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -26,6 +28,11 @@ $slug = $template->slug;
     FWD::the_layout( 'body-open' );
     ?>
     <div id="<?php echo $slug; ?>__wrapper">
+      <footer class="<?php echo $slug; ?>__footer">
+        <?php
+        FWD::the_component( $footer, 'universal/footer' );
+        ?>
+      </footer>
     </div>
     <?php
     // Footer meta and scripts

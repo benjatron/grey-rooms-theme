@@ -5,15 +5,8 @@
  */
 class Template_Homepage extends FWD_Template {
 
-  // Template variables
-
-  public function __construct( $acf_prefix ) {
-
-    $this->id = get_the_ID();
-    $this->slug = $this->get_template_slug();
+  public function build_components() {
     
-    // Instantiate components here
-
   }
 
 }
