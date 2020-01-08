@@ -16,6 +16,12 @@ class FWD_Template {
     $this->id = get_the_ID();
     $this->slug = $this->get_template_slug();
 
+    $this->build_components();
+
+  }
+
+  public function build_components() {
+    // Meant to be created per template
   }
 
   /**
