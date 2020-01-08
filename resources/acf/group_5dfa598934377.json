@@ -3,9 +3,9 @@
     "title": "Theme - Meta",
     "fields": [
         {
-            "key": "field_5dfa599603a21",
+            "key": "field_5dfbe53db2369",
             "label": "Google Tag Manager",
-            "name": "meta_gtm",
+            "name": "gtm",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -18,9 +18,9 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5dfa59af03a22",
+                    "key": "field_5dfbe551b236a",
                     "label": "Activate Google Tag Manager?",
-                    "name": "check",
+                    "name": "active",
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
@@ -37,21 +37,13 @@
                     "ui_off_text": ""
                 },
                 {
-                    "key": "field_5dfa59d603a23",
+                    "key": "field_5dfbe574b236b",
                     "label": "Tag Manager ID",
                     "name": "id",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5dfa59af03a22",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "70",
                         "class": "",
@@ -66,9 +58,9 @@
             ]
         },
         {
-            "key": "field_5dfa5a419a27f",
+            "key": "field_5dfbe587b236c",
             "label": "Adobe Fonts",
-            "name": "meta_adobeFonts",
+            "name": "adobe_fonts",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -81,9 +73,9 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5dfa5a419a280",
+                    "key": "field_5dfbe587b236d",
                     "label": "Activate Adobe Fonts?",
-                    "name": "check",
+                    "name": "active",
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
@@ -100,21 +92,13 @@
                     "ui_off_text": ""
                 },
                 {
-                    "key": "field_5dfa5a419a281",
+                    "key": "field_5dfbe587b236e",
                     "label": "Project ID",
                     "name": "id",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5dfa5a419a280",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "70",
                         "class": "",
@@ -146,5 +130,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1576688220
+    "modified": 1576789417
 }

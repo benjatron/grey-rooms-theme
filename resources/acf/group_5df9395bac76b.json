@@ -21,7 +21,7 @@
         {
             "key": "field_5dfa5a6946563",
             "label": "Theme Meta Settings",
-            "name": "site",
+            "name": "site_meta",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -57,5 +57,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Theme-wide settings",
-    "modified": 1576688262
+    "modified": 1576789270
 }
