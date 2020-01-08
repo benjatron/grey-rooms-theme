@@ -50,8 +50,9 @@ $THEME->disable_emojis();
 $THEME->set_the_excerpt();
 
 // Registers page templates for the theme
-$templates = array();
-$THEME->register_page_templates( $templates );
+$THEME->templates = array(
+  'homepage'
+);
 
 // Sets image sizes for the theme, in pixel widths
 $image_sizes = array(
