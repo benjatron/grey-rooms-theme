@@ -71,7 +71,7 @@ class FWD_Nav {
       $menu = get_term( $menu_locations[$location], 'nav_menu' );
       $items = wp_get_nav_menu_items( $menu->name );
       ?>
-      <nav id="<?php echo $id; ?>" class="<?php echo $class; ?>">
+      <nav id="<?php echo $id; ?>" class="<?php echo $class; ?>__menu">
         <ul class="<?php echo $class; ?>__list">
           <?php
           // Cycles through each menu item to create top-level links

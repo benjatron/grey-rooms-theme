@@ -19,6 +19,7 @@ class FWD_Template {
     $this->build_components();
 
     $this->footer = new Component_Footer( 'site_footer', 'option' );
+    $this->navigation = new Component_Navigation( 'site_general', 'option' );
   }
 
   /**

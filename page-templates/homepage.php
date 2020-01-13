@@ -7,6 +7,7 @@ use FWD_Helper as FWD;
 $template = new Template_Homepage('homepage');
 $slug = $template->slug;
 
+$navigation = $template->navigation;
 $footer = $template->footer;
 ?>
 <!doctype html>
@@ -28,6 +29,11 @@ $footer = $template->footer;
     FWD::the_layout( 'body-open' );
     ?>
     <div id="<?php echo $slug; ?>__wrapper">
+      <header class="<?php echo $slug; ?>__header">
+        <?php
+        FWD::the_component( $navigation, 'universal/navigation' );
+        ?>
+      </header>
       <footer class="<?php echo $slug; ?>__footer">
         <?php
         FWD::the_component( $footer, 'universal/footer' );
