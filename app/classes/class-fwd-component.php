@@ -14,7 +14,7 @@ class FWD_Component {
   // Contents from the ACF passed to the component
   public $contents;
 
-  public function __construct( $acf_field, $id ) {
+  public function __construct( $acf_field = null, $id = null ) {
 
     $this->acf_field = $acf_field;
     if( isset( $id ) ):

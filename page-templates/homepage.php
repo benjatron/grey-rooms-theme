@@ -8,6 +8,7 @@ $template = new Template_Homepage('homepage');
 $slug = $template->slug;
 
 $navigation = $template->navigation;
+$top = $template->top_content;
 $footer = $template->footer;
 ?>
 <!doctype html>
@@ -34,6 +35,13 @@ $footer = $template->footer;
         FWD::the_component( $navigation, 'universal/navigation' );
         ?>
       </header>
+      <main class="<?php echo $slug; ?>__main">
+        <section class="<?php echo $slug; ?>__top-content">
+          <?php
+          FWD::the_component( $top, 'content/homepage-top' );
+          ?>
+        </section>
+      </main>
       <footer class="<?php echo $slug; ?>__footer">
         <?php
         FWD::the_component( $footer, 'universal/footer' );
