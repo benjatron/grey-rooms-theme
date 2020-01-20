@@ -20,6 +20,7 @@ class FWD_Template {
 
     $this->footer = new Component_Footer( 'site_footer', 'option' );
     $this->navigation = new Component_Navigation( 'site_general', 'option' );
+    $this->cta = new Component_CTA( 'site_cta', 'option' );
   }
 
   /**

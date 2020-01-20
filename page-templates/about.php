@@ -7,6 +7,10 @@ use FWD_Helper as FWD;
 $template = new Template_About('about');
 $slug = $template->slug;
 
+$navigation = $template->navigation;
+$intro_content = $template->intro_content;
+$team = $template->team;
+$cta = $template->cta;
 $footer = $template->footer;
 ?>
 <!doctype html>
@@ -28,6 +32,30 @@ $footer = $template->footer;
     FWD::the_layout( 'body-open' );
     ?>
     <div id="<?php echo $slug; ?>__wrapper">
+      <header class="<?php echo $slug; ?>__header">
+        <section class="<?php echo $slug; ?>__navigation">
+          <?php
+          FWD::the_component( $navigation, 'universal/navigation' );
+          ?>
+        </section>
+      </header>
+      <main class="<?php echo $slug; ?>__main">
+        <section class="<?php echo $slug; ?>__intro-content">
+          <?php
+          FWD::the_component( $intro_content, 'content/about-intro' );
+          ?>
+        </section>
+        <section class="<?php echo $slug; ?>__team">
+          <?php
+          FWD::the_component( $team, 'media/team' );
+          ?>
+        </section>
+        <section class="<?php echo $slug; ?>__cta">
+          <?php
+          FWD::the_component( $cta, 'universal/cta' );
+          ?>
+        </section>
+      </main>
       <footer class="<?php echo $slug; ?>__footer">
         <?php
         FWD::the_component( $footer, 'universal/footer' );

@@ -18,8 +18,9 @@ $quick_links = $footer->menu;
 $social = $footer->social_networks;
 ?>
 <div class="<?php echo $block; ?>">
-  <?php FWD::the_lazy_image( 'footer__background footer__background--mobile', $bg_mobile, 800); ?>
-  <?php FWD::the_lazy_image( 'footer__background footer__background--wide', $bg_wide ); ?>
+  <?php FWD::the_lazy_image( "{$block}__background {$block}__background--mobile"
+  , $bg_mobile, 800); ?>
+  <?php FWD::the_lazy_image( "{$block}__background {$block}__background--wide", $bg_wide ); ?>
   <div class="<?php echo $block; ?>__contents">
     <div class="<?php echo $block; ?>__menu">
       <h3 class="<?php echo $block; ?>__menu-headline">

@@ -9,6 +9,8 @@ $slug = $template->slug;
 
 $navigation = $template->navigation;
 $top = $template->top_content;
+$body = $template->body_content;
+$cta = $template->cta;
 $footer = $template->footer;
 ?>
 <!doctype html>
@@ -31,14 +33,26 @@ $footer = $template->footer;
     ?>
     <div id="<?php echo $slug; ?>__wrapper">
       <header class="<?php echo $slug; ?>__header">
-        <?php
-        FWD::the_component( $navigation, 'universal/navigation' );
-        ?>
+        <section class="<?php echo $slug; ?>__navigation">
+          <?php
+          FWD::the_component( $navigation, 'universal/navigation' );
+          ?>
+        </section>
       </header>
       <main class="<?php echo $slug; ?>__main">
         <section class="<?php echo $slug; ?>__top-content">
           <?php
           FWD::the_component( $top, 'content/homepage-top' );
+          ?>
+        </section>
+        <section class="<?php echo $slug; ?>__body-content">
+          <?php
+          FWD::the_component( $body, 'content/homepage-body' );
+          ?>
+        </section>
+        <section class="<?php echo $slug; ?>__cta">
+          <?php
+          FWD::the_component( $cta, 'universal/cta' );
           ?>
         </section>
       </main>
