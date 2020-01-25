@@ -45,7 +45,7 @@ $social = $slider->social_networks;
             if( $slide['room'] ):
             ?>
               <span class="<?php echo $block; ?>__room">
-                Room <?php echo $slide; ?>
+                Room <?php echo $slide['room']; ?>
               </span>
             <?php
             endif;

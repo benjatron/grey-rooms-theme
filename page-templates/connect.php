@@ -8,6 +8,9 @@ $template = new Template_Connect('connect');
 $slug = $template->slug;
 
 $navigation = $template->navigation;
+$header = $template->header;
+$headline = $template->headline;
+$connect = $template->connect;
 $footer = $template->footer;
 ?>
 <!doctype html>
@@ -35,8 +38,14 @@ $footer = $template->footer;
           FWD::the_component( $navigation, 'universal/navigation' );
           ?>
         </section>
+        <section class="<?php echo $slug; ?>__background">
+          <?php
+          FWD::the_component( $header, 'media/header-background' );
+          ?>
+        </section>
       </header>
       <main class="<?php echo $slug; ?>__main">
+        <?php var_dump($template); ?>
       </main>
       <footer class="<?php echo $slug; ?>__footer">
         <?php

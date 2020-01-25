@@ -8,6 +8,8 @@ $template = new Template_Seasons('seasons');
 $slug = $template->slug;
 
 $navigation = $template->navigation;
+$background = $template->background;
+$episodes = $template->episodes;
 $footer = $template->footer;
 ?>
 <!doctype html>
@@ -37,6 +39,14 @@ $footer = $template->footer;
         </section>
       </header>
       <main class="<?php echo $slug; ?>__main">
+        <?php
+        FWD::the_lazy_image( "{$slug}__background", $background, 9999, true );
+        ?>
+        <section class="<?php echo $slug; ?>__episodes">
+          <?php
+          FWD::the_component( $episodes, 'media/episodes' );
+          ?>
+        </section>
       </main>
       <footer class="<?php echo $slug; ?>__footer">
         <?php
