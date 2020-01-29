@@ -45,7 +45,18 @@ $footer = $template->footer;
         </section>
       </header>
       <main class="<?php echo $slug; ?>__main">
-        <?php var_dump($template); ?>
+        <section class="<?php echo $slug; ?>__headline">
+          <h1 class="<?php echo $slug; ?>__headline-text">
+            <?php
+            echo $headline;
+            ?>
+          </h1>
+        </section>
+        <section class="<?php echo $slug; ?>__menu">
+          <?php
+          FWD::the_component( $connect, 'media/connect' );
+          ?>
+        </section>
       </main>
       <footer class="<?php echo $slug; ?>__footer">
         <?php
