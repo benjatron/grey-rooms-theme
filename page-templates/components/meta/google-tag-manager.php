@@ -2,7 +2,7 @@
 // Google Tag Manager integration
 
 // Get Google Tag Manager data from passed $COMPONENT
-$gtm = $COMPONENT['gtm'];
+$gtm = ( $COMPONENT ? $COMPONENT : array('active'=>false) );
 if( true === $gtm['active'] ):
   $id = $gtm['id'];
 ?>

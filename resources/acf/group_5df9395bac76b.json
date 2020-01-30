@@ -34,10 +34,10 @@
             "clone": [
                 "group_5dfa598934377"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
-            "prefix_name": 1
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -57,5 +57,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Theme-wide settings",
-    "modified": 1576789270
+    "modified": 1580419185
 }
