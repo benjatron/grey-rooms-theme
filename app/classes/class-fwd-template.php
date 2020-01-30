@@ -16,6 +16,8 @@ class FWD_Template {
     $this->id = get_the_ID();
     $this->slug = $this->get_template_slug();
 
+    $this->meta = new FWD_Component( 'site_meta', 'option' );
+
     $this->build_components();
 
   }

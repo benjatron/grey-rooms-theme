@@ -30,7 +30,7 @@ abstract class FWD_Helper {
    * hack is necessary. To cut down on typing and improve readability, this
    * function imports a layout partial and keeps variables accessible.
    *
-   * @var object $object      The object to pass to the component
+   * @var object $COMPONENT   The object to pass to the component
    * @var string $location    The location of the layout partial (without 
    *                          extension) within the components folder
    *
@@ -44,7 +44,7 @@ abstract class FWD_Helper {
     if( locate_template( $THEME->component_directory . $location . '.php', false, false ) ):
       return include( locate_template( $THEME->component_directory . $location . '.php', false, false ) );
     else:
-      FWD_Helper::console_log( "FWD_Helper::the_component( '{$location}' ) failed" );
+      FWD_Helper::console_log( "FWD_Helper::the_component( '{$COMPONENT}, {$location}' ) failed" );
     endif;
   }
 
@@ -54,18 +54,19 @@ abstract class FWD_Helper {
    * Layouts are a combination of components and common code that can be included
    * as one function instead of repeated get_component() calls or repeated code.
    *
+   * @var object $COMPONENT   The object to pass to the component
    * @var string $slug        The name of the partial file, without file extension
    *
    * @return mixed            The template file referenced
    */
-  public function the_layout( $slug ) {
+  public function the_layout( $COMPONENT, $slug ) {
     // Uses $THEME values
     global $THEME;
 
     if( locate_template( $THEME->layout_directory . $slug . '.php', false, false ) ):
       return include( locate_template( $THEME->layout_directory . $slug . '.php', false, false ) );
     else:
-      FWD_Helper::console_log( "FWD_Helper::the_layout( '{$slug}' ) failed" );
+      FWD_Helper::console_log( "FWD_Helper::the_layout( '{$COMPONENT}, {$slug}' ) failed" );
     endif;
   }
 

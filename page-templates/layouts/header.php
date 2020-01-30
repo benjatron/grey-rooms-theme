@@ -4,13 +4,14 @@
  */
 use FWD_Helper as FWD;
 
-// WordPress head() function
-wp_head();
+// Set meta variables from passed object
+$meta = $COMPONENT->contents;
 
-// Set meta variables to pass to components
-$meta = (object) get_field( 'site_meta', 'option' );
 $gtm = $meta->gtm;
 $adobe_fonts = $meta->adobe_fonts;
+
+// WordPress head() function
+wp_head();
 
 // Header meta tags
 FWD::the_component( null, 'meta/head' );

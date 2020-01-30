@@ -2,7 +2,8 @@
 // Markup to be fired after the opening <body> tag
 use FWD_Helper as FWD;
 
-$meta = (object) get_field( 'site_meta', 'option' );
+// Set meta variables from passed object
+$meta = $COMPONENT->contents;
 $gtm = $meta->gtm;
 
 // Noscript option for Google Tag Manager
