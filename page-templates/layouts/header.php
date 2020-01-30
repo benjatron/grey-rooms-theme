@@ -17,6 +17,3 @@ FWD::the_component( $meta, 'meta/google-tag-manager' );
 
 // Adobe Fonts
 FWD::the_component( $meta, 'meta/adobe-fonts' );
-
-// Google Fonts
-FWD::the_component( null, 'meta/google-fonts');
