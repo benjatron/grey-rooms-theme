@@ -1,7 +1,9 @@
 <?php
 // Noscript option for Google Tag Manager
-$gtm = get_field( 'site_meta_gtm', 'option' );
-if( true === $gtm['check'] ):
+
+// Get Google Tag Manager data from passed $COMPONENT
+$gtm = ( $COMPONENT ? $COMPONENT : array('active'=>false) );
+if( true === $gtm['active'] ):
   $id = $gtm['id'];
 ?>
   <noscript>

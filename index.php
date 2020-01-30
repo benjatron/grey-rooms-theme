@@ -3,6 +3,7 @@ use FWD_Helper as FWD;
 
 $template = new Template_Index;
 $slug = $template->slug;
+$meta = $template->meta;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -12,7 +13,7 @@ $slug = $template->slug;
     FWD::preload( $slug, 'css' );
     FWD::preload( $slug, 'js' );
 
-    FWD::the_layout( 'header' );
+    FWD::the_layout( $meta, 'header' );
 
     wp_enqueue_style( $slug );
     ?>
@@ -20,7 +21,7 @@ $slug = $template->slug;
   <body <?php body_class( $slug ); ?>>
     <?php
     // Body open meta and functions
-    FWD::the_layout( 'body-open' );
+    FWD::the_layout( $meta, 'body-open' );
     ?>
     <div id="<?php echo $slug; ?>__wrapper">
     </div>
