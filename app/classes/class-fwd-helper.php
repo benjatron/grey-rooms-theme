@@ -281,16 +281,8 @@ abstract class FWD_Helper {
    */
   function get_svg( $file ) {
     global $THEME;
-    // First, check the dist folder
-    if( file_exists( $THEME->image_directory . 'dist/svg/' . $file . '.svg') ):
-      return file_get_contents( $THEME->image_directory . 'dist/svg/' . $file . '.svg');
-    // Fall back to the src folder if no processed version of the svg exists
-    elseif( file_exists( $THEME->image_directory . 'src/svg/' . $file . '.svg') ):
-      return file_get_contents( $THEME->image_directory . 'src/svg/' . $file . '.svg');
-    // Otherwise, return an error message
-    else:
-      FWD_Helper::console_log( "FWD_Helper::get_svg( '{$file}' ) failed" );
-    endif;
+
+    return file_get_contents( $THEME->image_directory . 'dist/svg/' . $file . '.svg');
   }
 
   /**
