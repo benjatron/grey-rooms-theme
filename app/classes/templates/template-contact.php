@@ -5,4 +5,12 @@
  */
 class Template_Contact extends FWD_Template {
 
+  public function build_components() {
+
+    $this->header = new Component_Header( "{$this->slug}_header" );
+    $this->content = get_field( "{$this->slug}_content" );
+    $this->form = get_field( "{$this->slug}_form" );
+
+  }
+
 }

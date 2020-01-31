@@ -8,8 +8,12 @@ $template = new Template_Contact('contact');
 $slug = $template->slug;
 
 $navigation = $template->navigation;
+$header = $template->header;
+$content = $template->content;
+$form = $template->form;
 $cta = $template->cta;
 $footer = $template->footer;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -36,8 +40,23 @@ $footer = $template->footer;
           FWD::the_component( $navigation, 'universal/navigation' );
           ?>
         </section>
+        <section class="<?php echo $slug; ?>__background">
+          <?php
+          FWD::the_component( $header, 'media/header' );
+          ?>
+        </section>
       </header>
       <main class="<?php echo $slug; ?>__main">
+        <section class="<?php echo $slug; ?>__form">
+          <?php
+          FWD::the_component( $form, 'content/contact-form' );
+          ?>
+        </section>
+        <section class="<?php echo $slug; ?>__content">
+          <?php
+          FWD::the_component( $content, 'content/contact' );
+          ?>
+        </section>
         <section class="<?php echo $slug; ?>__cta">
           <?php
           FWD::the_component( $cta, 'universal/cta' );

@@ -8,6 +8,8 @@ $template = new Template_Episode('episode');
 $slug = $template->slug;
 
 $navigation = $template->navigation;
+$header = $template->header;
+$body = $template->body;
 $footer = $template->footer;
 ?>
 <!doctype html>
@@ -35,8 +37,18 @@ $footer = $template->footer;
           FWD::the_component( $navigation, 'universal/navigation' );
           ?>
         </section>
+        <section class="<?php echo $slug; ?>__background">
+          <?php
+          FWD::the_component( $header, 'media/episode-header' );
+          ?>
+        </section>
       </header>
       <main class="<?php echo $slug; ?>__main">
+        <section class="<?php echo $slug; ?>__episode-body">
+          <?php
+          FWD::the_component( $body, 'content/episode-body' );
+          ?>
+        </section>
       </main>
       <footer class="<?php echo $slug; ?>__footer">
         <?php
