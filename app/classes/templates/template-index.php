@@ -1,7 +1,6 @@
 <?php
 /**
- * Blank template class. The passed $acf_prefix assigns fields that are used 
- * for reference
+ * Index template class
  */
 class Template_Index extends FWD_Template {
 
