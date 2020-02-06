@@ -26,8 +26,11 @@ class FWD_Setup {
   // Directory of compiled script files
   public $script_directory;
 
-  // Directory of compiles style files
+  // Directory of compiled style files
   public $style_directory;
+
+  // Directory of page template files
+  public $template_directory;
 
   // Array of templates
   public $templates;
@@ -48,6 +51,7 @@ class FWD_Setup {
     $this->layout_directory =  'page-templates/layouts/';
     $this->script_directory = get_stylesheet_directory_uri() . '/resources/scripts/dist/';
     $this->style_directory = get_stylesheet_directory_uri() . '/resources/styles/dist/';
+    $this->template_directory = get_stylesheet_directory_uri() . '/page-templates/';
 
     $this->set_theme_supports();
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ), 100 );
