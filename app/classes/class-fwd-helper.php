@@ -71,6 +71,24 @@ abstract class FWD_Helper {
   }
 
   /**
+   * Includes a page template file
+   *
+   * @var string $slug      The name of the partial file, without file extension
+   *
+   * @return mixed          The template file referenced
+   */
+  public function the_template( $slug ) {
+    // Uses $THEME values
+    global $THEME;
+
+    if( locate_template( $THEME->template_directory . $slug . '.php', false, false ) ):
+      return include( locate_template( $THEME->template_directory . $slug . '.php', false, false ) );
+    else:
+      FWD_Helper::console_log( "FWD_Helper::the_template( '{$slug}' ) failed" );
+    endif;
+  }
+
+  /**
    * Emits a 'preload' link tag for the source provided
    *
    * @var string $handle      The script or style handle to preload
