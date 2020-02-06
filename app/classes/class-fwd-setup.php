@@ -51,7 +51,7 @@ class FWD_Setup {
     $this->layout_directory =  'page-templates/layouts/';
     $this->script_directory = get_stylesheet_directory_uri() . '/resources/scripts/dist/';
     $this->style_directory = get_stylesheet_directory_uri() . '/resources/styles/dist/';
-    $this->template_directory = get_stylesheet_directory_uri() . '/page-templates/';
+    $this->template_directory = '/page-templates/';
 
     $this->set_theme_supports();
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ), 100 );
