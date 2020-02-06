@@ -1,8 +1,8 @@
 <?php
 /**
- * Index template class
+ * Homepage template class
  */
-class Template_Index extends FWD_Template {
+class Template_Homepage extends FWD_Template {
 
   // Template variables
 
