@@ -16,6 +16,8 @@ import './vendor/dialog-polyfill';
 import './vendor/instant-page';
 // Lazysizes
 import './vendor/lazysizes';
+// Mmenu
+import './vendor/mmenu';
 // Smoothscroll Polyfill
 import './vendor/smoothscroll-polyfill';
 
@@ -34,3 +36,4 @@ for (var i=0; i<vidDefer.length; i++) {
 /**
  * Universal components
  */
+import './components/universal/navigation';

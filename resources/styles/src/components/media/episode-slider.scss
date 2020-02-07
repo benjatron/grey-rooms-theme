@@ -1,0 +1,12 @@
+/**
+ * Episode slider component styles
+ */
+
+.episode-slider {
+  color: $white;
+}
+
+.episode-slider__social-icon {
+  @include size(3.2rem);
+  fill: $white;
+}

@@ -1,0 +1,31 @@
+/**
+ * Top of homepage styles
+ */
+
+.homepage-top {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.homepage-top__background {
+  position: absolute;
+  z-index: 0;
+}
+
+.homepage-top__disclaimer {
+  color: $white;
+  font-family: $font-heading;
+  margin: auto;
+  padding: 40vw 0 0 0;
+  position: relative;
+  text-align: center;
+  width: 24rem;
+  z-index: 1;
+}
+
+.homepage-top__slider {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
