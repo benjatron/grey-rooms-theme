@@ -404,7 +404,7 @@ abstract class FWD_Helper {
    * @var array $image        The array of WordPress image data
    * @var int $max_width      The widest the image should appear
    * 
-   * @return string
+   * @return string           values to use in a "srcset" attribute
    */
   function the_srcset( $image, $max_width = 9999 ) {
 
