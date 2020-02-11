@@ -18,11 +18,11 @@ class FWD_Template {
 
     $this->meta = new FWD_Component( 'site_meta', 'option' );
 
-    $this->build_components();
+    $this->build_template();
 
   }
 
-  public function build_components() {
+  public function build_template() {
     // Meant to be created per template
   }
 
