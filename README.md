@@ -3,23 +3,33 @@ WordPress boilerplate theme for use as a starting point for development
 
 ## Theme Directory Structure
 ```
-fwd-boilerplate-theme
-|-.vscode             // VS Code settings, dictionary, etc.
-|-app                 // theme classes and functionality
-|-config              // Webpack, ESLint, stylelint, etc.
-|-node_modules
-|-page-templates      // Template and component markup files
-|-resources           // Styles, scripts, images, and fonts
-|-vendor
-.gitattributes
-.gitignore
-composer.json
-functions.php         // WP functions file
-index.php             // catch-all template
-LICENSE
-package.json
-README.md             // This readme
-style.css             // Theme masthead
+themes/fwd-boilerplate-theme/   # -> Theme root directory
+|--.gitattributes               # -> Git attributes for web projects
+|--.gitignore                   # -> Files ignored by Git
+|--.vscode/                     # -> VS Code settings, dictionary, etc.
+|--composer.json                # -> Composer autoloader
+|--app/                         # -> Theme classes and functionality
+|--|--classes/                  # -> Theme classes
+|--|--|--components/            # -> Component classes
+|--|--└--templates/             # -> Page template classes
+|--|--init.php                  # -> Class autoload functions
+|--└--README.md                 # -> app directory readme
+|--config/                      # -> Webpack, ESLint, stylelint, etc.
+|--|--.stylelintrc              # -> Stylelint configuration file
+|--|--postcss.config.js         # -> PostCSS configuration file
+|--|--README.md                 # -> Configuration file readme
+|--└--webpack.config.js         # -> Webpack configuration file
+|--functions.php                # -> WordPress functions file
+|--index.php                    # -> WordPress catch-all template
+|--LICENSE                      # -> Repository license file (don't edit)
+|--node_modules/                # -> Node.js packages (don't edit)
+|--package.json                 # -> Node.js dependencies and scripts
+|--page-templates/              # -> Template and component markup files
+|--README.md                    # -> This readme
+|--resources/                   # -> Styles, scripts, images, and fonts
+|--style.css                    # -> Theme meta information
+|--vendor/                      # -> Composer packages (don't edit)
+└--yarn.lock                    # -> Yarn lockfile
 ```
 
 
@@ -51,12 +61,12 @@ $ composer install
 ```
 By default, there are no PHP library dependencies, but this will create the ```vendor``` directory and ```autoload.php``` file, which are required for the theme to function properly. This should take very little time. Once that is complete:
 ```
-$ yarn install
+$ yarn
 ```
 Wait for the installation to complete, and you're pretty much done!
 
 ### Note
-If you do not run ```composer install``` before loading the theme, it will not work. Be sure to install all dependencies prior to viewing the theme.
+If you do not run ```composer install``` and ```yarn``` before loading the theme, it will not work. Be sure to install all dependencies prior to viewing the theme.
 
 
 ## 4. CLI Commands
@@ -79,7 +89,7 @@ This theme will save and load ACF field groups via local JSON files in the ```re
 #### 5.4.1 Theme Version Variable
 There is a global theme version variable used for basic cache-busting purposes. It's initially set to the current version of the boilerplate theme but can be set to whatever you like.
 
-##### 5.4.2 Theme functions
+#### 5.4.2 Theme functions
 There is a theme setup variable, ```$THEME```, set on initialization. After that there are several functions run to create menus, register templates, and set image sizes. This is generally set with simple function calls and passing arrays. Simply update the values as needed and you should see everything updated automatically.
 
 
