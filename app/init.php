@@ -8,16 +8,15 @@
  * @link    https://www.designfwd.com/
  */
 
+
+// Loads vendor files from Composer
+require( get_stylesheet_directory( ) .  '/vendor/autoload.php' );
+
+
 // Autoload functions
 spl_autoload_register( 'fwd_autoload_register' );
 spl_autoload_register( 'component_autoload_register' );
 spl_autoload_register( 'template_autoload_register' );
-
-
-/**
- * Loads vendor files from Composer
- */
-require( get_stylesheet_directory( ) .  '/vendor/autoload.php' );
 
 
 /**
