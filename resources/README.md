@@ -1,0 +1,1 @@
+# fwd-boilerplate-theme/resources
