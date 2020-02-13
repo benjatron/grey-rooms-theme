@@ -1,35 +1,78 @@
 # fwd-boilerplate-theme
 WordPress boilerplate theme for use as a starting point for development
 
-## Theme Directory Structure
+## 0. Theme Directory Structure
 ```
-themes/fwd-boilerplate-theme/   # -> Theme root directory
-|--.gitattributes               # -> Git attributes for web projects
-|--.gitignore                   # -> Files ignored by Git
-|--.vscode/                     # -> VS Code settings, dictionary, etc.
-|--composer.json                # -> Composer autoloader
-|--app/                         # -> Theme classes and functionality
-|--|--classes/                  # -> Theme classes
-|--|--|--components/            # -> Component classes
-|--|--└--templates/             # -> Page template classes
-|--|--init.php                  # -> Class autoload functions
-|--└--README.md                 # -> app directory readme
-|--config/                      # -> Webpack, ESLint, stylelint, etc.
-|--|--.stylelintrc              # -> Stylelint configuration file
-|--|--postcss.config.js         # -> PostCSS configuration file
-|--|--README.md                 # -> Configuration file readme
-|--└--webpack.config.js         # -> Webpack configuration file
-|--functions.php                # -> WordPress functions file
-|--index.php                    # -> WordPress catch-all template
-|--LICENSE                      # -> Repository license file (don't edit)
-|--node_modules/                # -> Node.js packages (don't edit)
-|--package.json                 # -> Node.js dependencies and scripts
-|--page-templates/              # -> Template and component markup files
-|--README.md                    # -> This readme
-|--resources/                   # -> Styles, scripts, images, and fonts
-|--style.css                    # -> Theme meta information
-|--vendor/                      # -> Composer packages (don't edit)
-└--yarn.lock                    # -> Yarn lockfile
+themes/fwd-boilerplate-theme/         # -> Theme root directory
+|--.gitattributes                     # -> Git attributes for web projects
+|--.gitignore                         # -> Files ignored by Git
+|--.vscode/                           # -> VS Code settings, dictionary, etc.
+|--composer.json                      # -> Composer autoloader
+|--app/                               # -> Theme classes and functionality
+|--|--classes/                        # -> Theme classes
+|--|-----components/                  # -> Component classes
+|--|-----└--component-footer.php      # -> Universal footer component
+|--|-----templates/                   # -> Page template classes
+|--|-----|--template-404.php          # -> 404 Error page template class
+|--|-----└--template-homepage.php     # -> Homepage template class
+|--|--init.php                        # -> Class autoload functions
+|--└--README.md                       # -> app directory readme
+|--config/                            # -> Webpack, ESLint, stylelint, etc.
+|--|--.stylelintrc                    # -> Stylelint configuration file
+|--|--postcss.config.js               # -> PostCSS configuration file
+|--|--README.md                       # -> Configuration file readme
+|--└--webpack.config.js               # -> Webpack configuration file
+|--functions.php                      # -> WordPress functions file
+|--index.php                          # -> WordPress catch-all template
+|--LICENSE                            # -> Repository license file (don't edit)
+|--node_modules/                      # -> Node.js packages (don't edit)
+|--package.json                       # -> Node.js dependencies and scripts
+|--page-templates/                    # -> Template and component markup files
+|--|--404.php                         # -> 404 Error page template
+|--|--components/                     # -> Theme components directory
+|--|--|--blank-component.php          # -> Blank component file
+|--|--└--meta/                        # -> Theme meta components
+|--|-----|--adobe-fonts.php           # -> Adobe Fonts component
+|--|-----|--foot.php                  # -> WordPress foot component
+|--|-----|--google-tag-manager.php    # -> Google Tag Manager (GTM) component
+|--|-----|--gtm-noscript.php          # -> GTM no-script fallback component
+|--|-----└--head.php                  # -> Generic <head> tags
+|--|--homepage.php                    # -> Homepage template
+|--|--layouts/                        # -> Theme layout directory
+|--|--|--body-open.php                # -> Body-open layout file
+|--|--└--header.php                   # -> Document header layout file
+|--└--README.md                       # -> Page templates readme
+|--README.md                          # -> This readme
+|--resources/                         # -> Styles, scripts, images, and fonts
+|--|--acf/                            # -> Advanced Custom Fields JSON directory
+|--|--fonts/                          # -> Theme-hosted font files
+|--|--images/                         # -> Theme-hosted image files
+|--|--README.md                       # -> Resources readme
+|--|--scripts/                        # -> Theme scripts directory
+|--|--|--dist/                        # -> Compiled theme scripts
+|--|--|--README.md                    # -> Theme scripts readme
+|--|--└--src/                         # -> Theme scripts source directory
+|--|-----|--components/               # -> Component scripts
+|--|-----|--pages/                    # -> Page template scripts
+|--|-----|--universal.js              # -> Universal theme scripts
+|--|-----└--vendor/                   # -> Vendor script settings
+|--└--styles/                         # -> Theme styles directory
+|-----|--dist/                        # -> Compiled theme styles
+|-----|--README.md                    # -> Theme styles readme
+|-----└--src/                         # -> Theme styles readme
+|--------|--_starter.scss             # -> Theme starter style manifest
+|--------|--base/                     # -> Base style directory
+|--------|--|--elements/              # -> HTML element styles
+|--------|--|--settings/              # -> Theme setting styles
+|--------|--|--tools/                 # -> Theme style tools
+|--------|--└--vendor/                # -> Vendor styles directory
+|--------|--components/               # -> Theme component styles
+|--------|--libraries/                # -> Style libraries
+|--------|--pages/                    # -> Page template styles
+|--------└--universal.scss            # -> Universal theme styles
+|--style.css                          # -> Theme meta information
+|--vendor/                            # -> Composer packages (don't edit)
+└--yarn.lock                          # -> Yarn lockfile
 ```
 
 
@@ -79,10 +122,10 @@ Aside from the Webpack setup, there are a few things included in the theme.
 Not everything has to be in a gigantic ```functions.php``` file! Theme functionality is broken up in classes under the ```app``` directory for simpler code management. The theme is still, in part, set up through the ```functions.php``` file and that's detailed [here](#5.4-functions.php). For information on the ```app``` directory contents, read the included [README](./app/README.md) file for that folder.
 
 ### 5.2 Page Templates Folder
-All page templates are loaded from the ```page-templates``` directory
+All page templates are loaded from the ```page-templates``` directory.
 
 ### 5.3 ACF Local JSON Support
-This theme will save and load ACF field groups via local JSON files in the ```resources``` directory
+This theme will save and load ACF field groups via local JSON files in the ```resources``` directory.
 
 ### 5.4 functions.php
 
