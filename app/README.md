@@ -1,6 +1,6 @@
 # fwd-boilerplate-theme/app
 
-## Sub-Directory Structure
+## 0. Sub-Directory Structure
 ```
 |app/                           # -> Theme classes and functionality
 |--class-fwd-component.php      # -> Base component class
