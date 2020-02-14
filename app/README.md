@@ -2,7 +2,7 @@
 
 ## 0. Sub-Directory Structure
 ```
-|app/                           # -> Theme classes and functionality
+app/                           # -> Theme classes and functionality
 |--class-fwd-component.php      # -> Base component class
 |--class-fwd-helper.php         # -> Helper function class
 |--class-fwd-setup.php          # -> Theme setup class

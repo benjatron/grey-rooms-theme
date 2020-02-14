@@ -2,7 +2,7 @@
 
 ## 0. Sub-Directory Structure
 ```
-|config/                        # -> Theme development configuration files
+config/                        # -> Theme development configuration files
 |--.stylelintrc                 # -> Stylelint configuration file
 |--postcss.config.js            # -> PostCSS configuration file
 |--README.md                    # -> This readme
