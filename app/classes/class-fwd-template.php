@@ -18,11 +18,11 @@ class FWD_Template {
 
     $this->meta = new FWD_Component( 'site_meta', 'option' );
 
-    $this->build_components();
+    $this->build_template();
 
   }
 
-  public function build_components() {
+  public function build_template() {
     // Meant to be created per template
   }
 
@@ -31,7 +31,7 @@ class FWD_Template {
  *
  * @var string $id      (optional) The id of the post being queried
  *
- * @var string $result  The truncated page template slug
+ * @return string       The truncated page template slug
  */
   public function get_template_slug() {
     $slug = get_page_template_slug( $this->page_id );

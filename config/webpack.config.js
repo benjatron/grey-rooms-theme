@@ -20,6 +20,7 @@ module.exports = {
     // Universally-needed JS
     universal: path.resolve(project.scripts, 'src/universal.js'),
     // Page template JS
+    404: path.resolve(project.scripts, 'src/pages/404.js'),
     homepage: path.resolve(project.scripts, 'src/pages/homepage.js')
   },
   output: {
