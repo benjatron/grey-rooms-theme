@@ -4,7 +4,30 @@
 
 .episode-slider {
   color: $white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
+
+.episode-slider__headline {
+  font-family: $font-body;
+  font-size: 3rem;
+  width: 50%;
+}
+
+.episode-slider__slider {
+  display: flex;
+  width: 100%;
+}
+
+.episode-slider__slides {
+  width: 100%;
+}
+
+.episode-slider__social {
+  width: 50%;
+}
+
 
 .episode-slider__social-icon {
   @include size(3.2rem);

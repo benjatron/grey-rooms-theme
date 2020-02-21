@@ -57,9 +57,9 @@ $social = $slider->social_networks;
           <a class="<?php echo $block; ?>?__button" href="<?php echo $slide['link']; ?>">
             Episode Info
           </a>
-        </div>
-        <div class="<?php echo $block; ?>__player">
-          <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/<?php echo $slide['libsyn_id']; ?>/height/90/theme/custom/thumbnail/yes/direction/backward/render-playlist/no/custom-color/2056cf/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+          <div class="<?php echo $block; ?>__player">
+            <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/<?php echo $slide['libsyn_id']; ?>/height/90/theme/custom/thumbnail/yes/direction/backward/render-playlist/no/custom-color/2056cf/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+          </div>
         </div>
       <?php
       endforeach;
