@@ -58,6 +58,12 @@ class FWD_Setup {
     $this->set_acf_json_locations();
     $this->create_theme_settings_page();
 
+    /**
+     * Speed up ACF backend loading time
+     * @see https://www.advancedcustomfields.com/blog/acf-pro-5-5-13-update/
+     */
+    add_filter('acf/settings/remove_wp_meta_box', '__return_true');
+
   }
 
   /**
