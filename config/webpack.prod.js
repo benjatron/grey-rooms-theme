@@ -1,4 +1,5 @@
 const path = require('path');
+const merge = require('webpack-merge')
 
 // Require our plugins
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
@@ -14,15 +15,10 @@ project.images = path.resolve(project.resources, 'images');
 project.scripts = path.resolve(project.resources, 'scripts');
 project.styles = path.resolve(project.resources, 'styles');
 
-module.exports = {
+const entryPoints = require('./entryPoints');
+
+module.exports = merge( entryPoints, {
   mode: 'production',
-  entry: {
-    // Universally-needed JS
-    universal: path.resolve(project.scripts, 'src/universal.js'),
-    // Page template JS
-    404: path.resolve(project.scripts, 'src/pages/404.js'),
-    homepage: path.resolve(project.scripts, 'src/pages/homepage.js')
-  },
   output: {
     filename: '[name].js',
     path: path.resolve(project.scripts, 'dist')
@@ -134,4 +130,4 @@ module.exports = {
       }
     ]
   }
-};
+});

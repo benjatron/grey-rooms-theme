@@ -7,9 +7,5 @@
 import '../../../styles/src/pages/homepage.scss';
 
 /*
- * Component imports
- */
-
-/*
  * Page-specific scripting
  */

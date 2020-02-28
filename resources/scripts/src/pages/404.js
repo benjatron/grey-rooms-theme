@@ -7,9 +7,5 @@
 import '../../../styles/src/pages/404.scss';
 
 /*
- * Component imports
- */
-
-/*
  * Page-specific scripting
  */

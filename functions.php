@@ -14,7 +14,7 @@
  * Defines the theme version for the purpose of file loading
  * ! Do not delete.
  */
-$THEME_VERSION = "2.2";
+$THEME_VERSION = "2.2.1";
 
 // Composer files
 require_once __DIR__ . '/vendor/autoload.php';
