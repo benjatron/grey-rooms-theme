@@ -30,7 +30,3 @@ for (var i=0; i<vidDefer.length; i++) {
     vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
   }
 }
-
-/**
- * Universal components
- */
