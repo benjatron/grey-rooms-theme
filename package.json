@@ -41,15 +41,15 @@
     "dialog-polyfill": "^0.5.0",
     "instant.page": "^3.0.0",
     "lazysizes": "^5.2.0",
-    "mmenu-js": "^8.4.7",
+    "mmenu-js": "^8.5.0",
     "smoothscroll-polyfill": "^0.4.4",
-    "swiper": "^5.3.1"
+    "swiper": "^5.3.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
     "autoprefixer": "^9.7.4",
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "bourbon": "^6.0.0",
     "css-loader": "^3.4.2",

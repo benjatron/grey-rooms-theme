@@ -1,0 +1,48 @@
+// Homepage body component
+
+.homepage-body {
+  align-items: center;
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.homepage-body__background {
+  max-width: 42rem;
+  width: 60%;
+}
+
+.homepage-body__heading {
+  font-family: $font-heading;
+  font-size: 1.5rem;
+  padding: .5rem 0;
+
+  @media( min-width: 640px ) {
+    font-size: 2rem;
+  }
+}
+
+.homepage-body__subhead {
+  font-family: $font-body;
+  font-size: .875rem;
+  line-height: 1;
+  margin: auto;
+  padding: 0;
+  transition: font-size 300ms ease,
+    line-height 300ms ease;
+  width: 15rem;
+
+  @media( min-width: 640px ) {
+    font-size: 1.125rem;
+    line-height: .8;
+    width: 100%;
+  }
+}
+
+.homepage-body__text {
+  color: $white;
+  padding: .5rem 0;
+}

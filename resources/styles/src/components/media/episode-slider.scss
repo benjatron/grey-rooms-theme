@@ -2,22 +2,47 @@
  * Episode slider component styles
  */
 
+@import '~swiper/swiper';
+
 .episode-slider {
+  background-color: $blue-dark;
   color: $white;
   display: flex;
   flex-wrap: wrap;
+  padding: .5rem 1rem;
   width: 100%;
+}
+
+.episode-slider__button {
+  display: none;
+  font-family: $font-heading;
+
+  @media( min-width: 640px ) {
+    display: flex;
+  }
 }
 
 .episode-slider__headline {
-  font-family: $font-body;
-  font-size: 3rem;
+  font-family: $font-heading;
+  font-size: 1.25rem;
   width: 50%;
 }
 
+.episode-slider__masthead {
+  display: none;
+  font-family: $font-heading;
+
+  @media( min-width: 640px ) {
+    display: flex;
+  }
+}
+
+.episode-slider__slide {
+  padding: 1rem;
+}
+
 .episode-slider__slider {
-  display: flex;
-  width: 100%;
+  @include size( 100% );
 }
 
 .episode-slider__slides {
@@ -25,11 +50,19 @@
 }
 
 .episode-slider__social {
+  display: none;
   width: 50%;
-}
 
+  @media( min-width: 640px ) {
+    display: block;
+  }
+}
 
 .episode-slider__social-icon {
   @include size(3.2rem);
   fill: $white;
+}
+
+.episode-slider__title {
+  font-family: $font-body;
 }

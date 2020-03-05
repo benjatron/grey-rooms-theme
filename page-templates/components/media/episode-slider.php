@@ -27,12 +27,12 @@ $social = $slider->social_networks;
     endforeach;
     ?>
   </div>
-  <div class="<?php echo $block; ?>__slider">
-    <div class="<?php echo $block; ?>__slides">
+  <div class="<?php echo $block; ?>__slider swiper-container">
+    <div class="<?php echo $block; ?>__slides swiper-wrapper">
       <?php
       foreach( $episodes as $slide ):
       ?>
-        <div class="<?php echo $block; ?>__slide">
+        <div class="<?php echo $block; ?>__slide swiper-slide">
           <div class="<?php echo $block; ?>__masthead">
             <span class="<?php echo $block; ?>__season">
               Season <?php echo $slide['season']; ?>
@@ -54,16 +54,17 @@ $social = $slider->social_networks;
               <?php echo $slide['title']; ?>
             </h3>
           </div>
-          <a class="<?php echo $block; ?>?__button" href="<?php echo $slide['link']; ?>">
+          <a class="<?php echo $block; ?>__button" href="<?php echo $slide['link']; ?>">
             Episode Info
           </a>
           <div class="<?php echo $block; ?>__player">
-            <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/<?php echo $slide['libsyn_id']; ?>/height/90/theme/custom/thumbnail/yes/direction/backward/render-playlist/no/custom-color/2056cf/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+            <iframe style="border: none" src="" data-src="//html5-player.libsyn.com/embed/episode/id/<?php echo $slide['libsyn_id']; ?>/height/90/theme/custom/thumbnail/yes/direction/backward/render-playlist/no/custom-color/2056cf/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
           </div>
         </div>
       <?php
       endforeach;
       ?>
     </div>
+    <div class="<?= $block ?>__pagination swiper-pagination"></div>
   </div>
 </div>

@@ -5,27 +5,41 @@
 .homepage-top {
   position: relative;
   width: 100%;
-  z-index: 1;
 }
 
 .homepage-top__background {
+  @include size( calc( 100% + 1px ) );
+  object-fit: cover;
   position: absolute;
-  z-index: 0;
+}
+
+.homepage-top__content {
+  align-items: center;
+  @include size( 100% );
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .homepage-top__disclaimer {
   color: $white;
-  font-family: $font-heading;
+  font-family: $font-body;
   margin: auto;
   padding: 40vw 0 0;
-  position: relative;
   text-align: center;
   width: 24rem;
-  z-index: 1;
 }
 
 .homepage-top__slider {
-  position: relative;
   width: 100%;
-  z-index: 1;
+}
+
+.homepage-top__slogan {
+  color: $white;
+  font-family: $font-body;
+  font-size: 1.125rem;
+  padding: 5rem 0;
+  text-align: center;
+  width: 100%;
 }

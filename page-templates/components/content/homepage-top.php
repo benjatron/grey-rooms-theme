@@ -15,13 +15,15 @@ $slogan = $top['slogan'];
 ?>
 <div class="<?php echo $block; ?>">
   <?php FWD::the_lazy_image( "{$block}__background", $background ); ?>
-  <div class="<?php echo $block; ?>__disclaimer">
-    <?php echo $disclaimer; ?>
-  </div>
-  <div class="<?php echo $block; ?>__slider">
-    <?php FWD::the_component( $slider, 'media/episode-slider' ); ?>
-  </div>
-  <div class="<?php echo $block; ?>__slogan">
-    <?php echo $slogan; ?>
+  <div class="<?= $block; ?>__content">
+    <div class="<?php echo $block; ?>__disclaimer">
+      <?php echo $disclaimer; ?>
+    </div>
+    <div class="<?php echo $block; ?>__slider">
+      <?php FWD::the_component( $slider, 'media/episode-slider' ); ?>
+    </div>
+    <div class="<?php echo $block; ?>__slogan">
+      <?php echo $slogan; ?>
+    </div>
   </div>
 </div>

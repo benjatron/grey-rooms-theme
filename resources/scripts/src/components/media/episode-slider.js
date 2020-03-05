@@ -1,7 +1,17 @@
 // Episode slider scripts
-import { Swiper, Keyboard, Navigation, Pagination, Controller, A11y, Autoplay } from 'swiper/js/swiper.esm.js';
+import Swiper from 'swiper';
 
-let episodes = new Swiper( '.episode-slider__slides', {
-    speed: 500
-  }
-);
+let swiper = new Swiper( '.episode-slider__slider', {
+  grabCursor: true,
+  loop: true,
+  slideToClickedSlide: true,
+  speed: 400,
+  spaceBetween: 100,
+  uniqueNavElements: true,
+  pagination: {
+    clickable: true,
+    el: '.episode-slider__pagination',
+    hideOnClick: false,
+    type: 'bullets',
+  },
+});

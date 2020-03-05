@@ -17,4 +17,5 @@ html {
 
 body {
   @include size(100%);
+  background-color: $black;
 }

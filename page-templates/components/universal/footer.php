@@ -30,9 +30,9 @@ $social = $footer->social_networks;
     </div>
     <div class="<?php echo $block; ?>__contact">
       <div class="<?php echo $block; ?>__keys">
-        <?php FWD::the_lazy_image( 'footer__overlay', $overlay, 800 ); ?>
+        <?php FWD::the_lazy_image( 'footer__key-image', $overlay, 800 ); ?>
         <a class="<?php echo $block; ?>__contact-link" href="<?php the_permalink($contact->ID); ?>">
-          Contact Us
+          Contact<br/>Us
         </a>
       </div>
       <div class="<?php echo $block; ?>__social">

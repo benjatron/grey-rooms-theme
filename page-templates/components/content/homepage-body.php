@@ -13,7 +13,6 @@ $heading = $body['heading'];
 $subhead = $body['subhead'];
 ?>
 <div class="<?php echo $block; ?>">
-  <?php FWD::the_lazy_image( "{$block}__background", $background ); ?>
   <div class="<?php echo $block; ?>__text">
     <h2 class="<?php echo $block; ?>__heading">
       <?php echo $heading; ?>
@@ -22,4 +21,5 @@ $subhead = $body['subhead'];
       <?php echo $subhead; ?>
     </h3>
   </div>
+  <?php FWD::the_lazy_image( "{$block}__background", $background ); ?>
 </div>

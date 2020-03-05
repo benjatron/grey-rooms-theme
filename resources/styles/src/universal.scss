@@ -57,7 +57,9 @@
  * Universal Components
  * (optional) Only include components that appear on all pages
  */
+@import './components/universal/cta';
 @import './components/universal/navigation';
+@import './components/universal/footer';
 
 
 /**
