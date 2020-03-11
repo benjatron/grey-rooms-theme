@@ -24,15 +24,21 @@
 
 .navigation__icon {
   @include size(2rem);
+  margin: 2rem;
 }
 
 .navigation__links--wide {
   color: $white;
+  display: none;
   font-family: $font-heading;
   font-size: 2rem;
   margin-left: auto;
   text-transform: uppercase;
   width: auto;
+
+  @media( min-width: 800px ) {
+    display: flex;
+  }
 
   .navigation__nav {
     background-color: $black-50;
@@ -48,4 +54,8 @@
 .navigation__logo {
   margin: 0 0 0 2rem;
   width: 4rem;
+
+  @media( min-width: 640px ) {
+    width: 8rem;
+  }
 }
