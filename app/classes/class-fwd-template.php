@@ -11,10 +11,14 @@ class FWD_Template {
   // The slug of the page template used
   public $slug;
 
-  public function __construct() {
+  public function __construct( $slug = null ) {
 
     $this->id = get_the_ID();
-    $this->slug = $this->get_template_slug();
+    if( $slug != null ):
+      $this->slug = $slug;
+    else:
+      $this->slug = $this->get_template_slug();
+    endif;
 
     $this->meta = new FWD_Component( 'site_meta', 'option' );
 
