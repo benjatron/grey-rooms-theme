@@ -11,10 +11,10 @@ class FWD_Template {
   // The slug of the page template used
   public $slug;
 
-  public function __construct( $slug ) {
+  public function __construct( $slug = null ) {
 
     $this->id = get_the_ID();
-    if( $slug ):
+    if( $slug != null ):
       $this->slug = $slug;
     else:
       $this->slug = $this->get_template_slug();
