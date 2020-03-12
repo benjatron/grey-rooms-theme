@@ -15,7 +15,15 @@
 // h6 {}
 // header {}
 // hgroup {}
-// main {}
+
+main {
+
+  // Reset <ul>'s in main content to show bullets
+  ul {
+    list-style-type: disc;
+  }
+}
+
 // nav {}
 // section {}
 
