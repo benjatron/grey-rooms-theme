@@ -57,22 +57,14 @@ $THEME->templates = array(
 
 // Sets image sizes for the theme, in pixel widths
 $image_sizes = array(
-  128,
+  120,
   240,
-  320,
-  375,
+  360,
   480,
-  540,
   640,
   720,
-  768,
-  800,
   960,
-  1024,
   1280,
-  1366,
-  1440,
-  1600,
   1920,
   2560,
   3840
