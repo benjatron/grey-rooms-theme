@@ -21,7 +21,7 @@
         {
             "key": "field_5e0aa4d6fab03",
             "label": "Headline",
-            "name": "about_headline",
+            "name": "team_headline",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -40,7 +40,7 @@
         {
             "key": "field_5e0aa4fdfab04",
             "label": "Body Content",
-            "name": "about_introduction",
+            "name": "team_introduction",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -59,7 +59,7 @@
         {
             "key": "field_5e0aa527fab05",
             "label": "Background Image",
-            "name": "about_background",
+            "name": "team_background",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -99,7 +99,7 @@
         {
             "key": "field_5e0aa5a6fab07",
             "label": "Podcast Team",
-            "name": "about_team",
+            "name": "team_people",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -113,52 +113,14 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "Add Team Member",
+            "button_label": "Add Section",
             "sub_fields": [
                 {
-                    "key": "field_5e0aa5d2fab08",
-                    "label": "Name",
-                    "name": "name",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5e0aa5e0fab09",
-                    "label": "Title",
+                    "key": "field_5e69810ab6e67",
+                    "label": "Section Title",
                     "name": "title",
                     "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5e0aa5e8fab0a",
-                    "label": "Portrait",
-                    "name": "portrait",
-                    "type": "image",
-                    "instructions": "",
+                    "instructions": "Title text for the section",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -166,16 +128,94 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
-                    "preview_size": "320w",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5e698141b6e68",
+                    "label": "People",
+                    "name": "people",
+                    "type": "repeater",
+                    "instructions": "People to add to this section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "block",
+                    "button_label": "Add Person",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e69861fb6e69",
+                            "label": "Name",
+                            "name": "name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5e698628b6e6a",
+                            "label": "Subtitle",
+                            "name": "subtitle",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5e698632b6e6b",
+                            "label": "Portrait",
+                            "name": "portrait",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "320w",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ]
                 }
             ]
         }
@@ -185,7 +225,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/about.php"
+                "value": "page-templates\/team.php"
             }
         ]
     ],
@@ -199,5 +239,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1577756166
+    "modified": 1583977702
 }

@@ -1,15 +1,15 @@
 <?php
 /**
- * Template Name: About
+ * Template Name: Team
  */
 use FWD_Helper as FWD;
 
-$template = new Template_About('about');
+$template = new Template_Team('team');
 $slug = $template->slug;
 
 $navigation = $template->navigation;
 $intro_content = $template->intro_content;
-$team = $template->team;
+$team_members = $template->team;
 $cta = $template->cta;
 $footer = $template->footer;
 ?>
@@ -47,7 +47,7 @@ $footer = $template->footer;
         </section>
         <section class="<?php echo $slug; ?>__team">
           <?php
-          FWD::the_component( $team, 'media/team' );
+          FWD::the_component( $team_members, 'media/team-members' );
           ?>
         </section>
         <section class="<?php echo $slug; ?>__cta">

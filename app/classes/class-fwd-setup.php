@@ -33,7 +33,7 @@ class FWD_Setup {
   public $templates;
 
   // Version of the theme used for cache-busting purposes
-  public $theme_version = "1.0";
+  public $theme_version;
 
   public function __construct() {
 
@@ -182,7 +182,7 @@ class FWD_Setup {
   */
   public function register( $slug ) {
     wp_register_script( $slug, $this->script_directory . $slug . '.js', array( 'universal' ), $this->theme_version, true );
-    wp_register_style( $slug, $this->style_directory . $slug . '.css', array('universal'), $this->theme_version );
+    wp_register_style( $slug, $this->style_directory . $slug . '.css', array('universal'), $this->theme_version, 'all' );
   }
 
   /**

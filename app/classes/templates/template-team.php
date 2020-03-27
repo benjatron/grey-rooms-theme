@@ -3,7 +3,7 @@
  * About template class. The passed $acf_prefix assigns fields that are used 
  * for reference
  */
-class Template_About extends FWD_Template {
+class Template_Team extends FWD_Template {
 
   // Intro content
   public $intro_content;
@@ -24,7 +24,7 @@ class Template_About extends FWD_Template {
     $this->team = array(
 
       'background' => get_field( "site_general", 'option' )['background_image'],
-      'people' => get_field( "{$this->slug}_team" )
+      'people' => get_field( "{$this->slug}_people" )
 
      );
 

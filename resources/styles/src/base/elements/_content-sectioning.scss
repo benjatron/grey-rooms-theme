@@ -6,7 +6,9 @@
 // article {}
 // aside {}
 // footer {}
-// #{$all-headers} {}
+#{$all-headers} {
+  font-family: $font-heading;
+}
 // h1 {}
 // h2 {}
 // h3 {}
@@ -17,9 +19,14 @@
 // hgroup {}
 // main {}
 // nav {}
+// section {}
+footer,
+header,
+main,
 section {
   align-items: center;
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100%;
 }

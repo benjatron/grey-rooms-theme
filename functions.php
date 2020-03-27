@@ -52,7 +52,8 @@ $THEME->set_the_excerpt();
 
 // Registers page templates for the theme
 $THEME->templates = array(
-  'homepage'
+  'homepage',
+  'team',
 );
 
 // Sets image sizes for the theme, in pixel widths
