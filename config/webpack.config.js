@@ -21,6 +21,7 @@ module.exports = {
     universal: path.resolve(project.scripts, 'src/universal.js'),
     // Page template JS
     homepage: path.resolve(project.scripts, 'src/pages/homepage.js'),
+    seasons: path.resolve(project.scripts, 'src/pages/seasons.js'),
     team: path.resolve(project.scripts, 'src/pages/team.js')
   },
   output: {

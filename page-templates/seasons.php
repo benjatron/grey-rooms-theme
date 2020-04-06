@@ -3,6 +3,7 @@
  * Template Name: Seasons
  */
 use FWD_Helper as FWD;
+global $THEME;
 
 $template = new Template_Seasons('seasons');
 $slug = $template->slug;
@@ -22,7 +23,7 @@ $footer = $template->footer;
 
     FWD::the_layout( 'header' );
 
-    wp_enqueue_style( $slug );
+    wp_enqueue_style( $slug, $THEME->style_directory . $slug . '.css', array('universal'), $THEME->theme_version );
     ?>
   </head>
   <body <?php body_class( $slug ); ?>>
@@ -56,7 +57,7 @@ $footer = $template->footer;
     </div>
     <?php
     // Footer meta and scripts
-    wp_enqueue_script( $slug );
+    wp_enqueue_script( $slug, $THEME->script_directory . $slug . '.js', array('universal'), $THEME->theme_version );
     FWD::the_component( null, 'meta/foot' );
     ?>
   </body>
