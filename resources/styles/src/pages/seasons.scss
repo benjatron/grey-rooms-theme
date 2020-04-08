@@ -23,6 +23,7 @@
 
 .seasons__episodes {
   margin-top: -8rem;
+  z-index: 2;
 
   @media( min-width: 800px ) {
     margin-top: -16rem;

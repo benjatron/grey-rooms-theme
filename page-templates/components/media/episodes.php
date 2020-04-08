@@ -23,7 +23,7 @@ $block = "episodes"; // The base block class
       foreach( $seasons as $season ):
       $index ++;
       ?>
-        <option class="<?php echo $block ?>__option" value="season-<?php echo $season; ?>" <?php if($index==1){echo 'selected';} ?>>
+        <option class="<?php echo $block ?>__option" value="<?php echo $season; ?>" <?php if($index==1){echo 'selected ';} ?>>
           Season <?php echo $season; ?> <svg class="<?php echo $block; ?>__icon" viewBox="0 0 16 16"><?php FWD::the_svg( 'triangle' ); ?></svg>
         </option>
       <?php
@@ -36,12 +36,12 @@ $block = "episodes"; // The base block class
     <?php
     foreach( $episodes as $episode ):
     ?>
-      <div class="<?php echo $block; ?>__episode <?php echo $block; ?>__episode--preload" data-season="<?php echo $episode['season']; ?>">
+      <div class="<?php echo "{$block}__episode {$block}__episode--is-hidden {$block}__episode--preload"; ?>" data-season="<?php echo $episode['season']; ?>">
         <div class="<?php echo $block; ?>__masthead">
           <span class="<?php echo $block; ?>__season">
             Season <?php echo $episode['season']; ?>
           </span>
-          <span class="<?php echo $block; ?>__episode">
+          <span class="<?php echo $block; ?>__number">
             Ep <?php echo $episode['episode']; ?>
           </span>
           <?php
