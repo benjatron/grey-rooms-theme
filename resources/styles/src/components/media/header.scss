@@ -1,0 +1,26 @@
+// Header component styles
+
+.header {
+  position: relative;
+  width: 100%;
+}
+
+.header__background {
+  width: 100%;
+}
+
+.header__background--desktop {
+  display: none;
+
+  @media( min-width: 960px ) {
+    display: inherit;
+  }
+}
+
+.header__background--mobile {
+  display: inherit;
+
+  @media( min-width: 960px ) {
+    display: none;
+  }
+}

@@ -22,7 +22,7 @@ $footer = $template->footer;
 
     FWD::the_layout( 'header' );
 
-    wp_enqueue_style( $slug );
+    wp_enqueue_style( $slug, $THEME->style_directory . $slug . '.css', array('universal'), $THEME->theme_version );
     ?>
   </head>
   <body <?php body_class( $slug ); ?>>
@@ -58,12 +58,10 @@ $footer = $template->footer;
     </div>
     <?php
     // Footer meta and scripts
-    wp_enqueue_script( $slug );
+    wp_enqueue_script( $slug, $THEME->script_directory . $slug . '.js', array('universal'), $THEME->theme_version );
     FWD::the_component( null, 'meta/foot' );
     ?>
   </body>
 </html>
 
 <?php
-// iframe example
-// <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/12539708/height/90/theme/custom/thumbnail/yes/direction/backward/render-playlist/no/custom-color/2056cf/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>

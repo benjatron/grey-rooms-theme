@@ -193,11 +193,11 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5e1684fe176c8",
+                    "key": "field_5e1681bd2d175",
                     "label": "Logo",
                     "name": "logo",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "Logo for the site, as it appears in the navigation and anywhere else",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -206,7 +206,7 @@
                         "id": ""
                     },
                     "return_format": "array",
-                    "preview_size": "540w",
+                    "preview_size": "480w",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -299,6 +299,7 @@
                                 "google-play": "Google Play",
                                 "instagram": "Instagram",
                                 "itunes": "iTunes",
+                                "spotify": "Spotify",
                                 "stitcher": "Stitcher",
                                 "twitter": "Twitter"
                             },
@@ -642,5 +643,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Theme-wide settings",
-    "modified": 1578534156
+    "modified": 1586476524
 }

@@ -1,0 +1,40 @@
+// Episode header styles
+.episode-header,
+.episode-header__backgrounds {
+  position: relative;
+  width: 100%;
+}
+
+.episode-header__artwork {
+  left: 25.4vw;
+  position: absolute;
+  top: 27.5vw;
+  width: 45vw;
+
+  @media( min-width: 960px ) {
+    left: 53.7vw;
+    top: 27.3vw;
+    width: 44vw;
+  }
+}
+
+.episode-header__background {
+  object-fit: cover;
+  width: 100%;
+}
+
+.episode-header__background--desktop {
+  display: none;
+
+  @media( min-width: 960px ) {
+    display: inherit;
+  }
+}
+
+.episode-header__background--mobile {
+  display: inherit;
+
+  @media( min-width: 960px ) {
+    display: none;
+  }
+}

@@ -50,19 +50,17 @@ $content = $body->content;
   </div>
 
   <div class="<?php echo $block; ?>__body">
+    <?php
+      FWD::the_lazy_image( "{$block}__background", $background, 4096, true );
+    ?>
     <div class="<?php echo $block; ?>__credits">
       <?php echo $credits; ?>
     </div>
     <div class="<?php echo $block; ?>__introduction">
       <?php echo $introduction; ?>
     </div>
-    <div class="<?php echo $block; ?>__text">
-      <?php
-      FWD::the_lazy_image( "{$block}__background", $background, 4096, true );
-      ?>
-      <div class="<?php echo $block; ?>__content">
-        <?php echo $content; ?>
-      </div>
+    <div class="<?php echo $block; ?>__content">
+      <?php echo $content; ?>
     </div>
   </div>
 
