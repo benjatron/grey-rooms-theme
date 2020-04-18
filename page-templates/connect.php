@@ -23,7 +23,7 @@ $footer = $template->footer;
 
     FWD::the_layout( 'header' );
 
-    wp_enqueue_style( $slug );
+    wp_enqueue_style( $slug, $THEME->style_directory . $slug . '.css', array('universal'), $THEME->theme_version );
     ?>
   </head>
   <body <?php body_class( $slug ); ?>>
@@ -40,7 +40,7 @@ $footer = $template->footer;
         </section>
         <section class="<?php echo $slug; ?>__background">
           <?php
-          FWD::the_component( $header, 'media/header-background' );
+          FWD::the_component( $header, 'media/header' );
           ?>
         </section>
       </header>
@@ -66,7 +66,7 @@ $footer = $template->footer;
     </div>
     <?php
     // Footer meta and scripts
-    wp_enqueue_script( $slug );
+    wp_enqueue_script( $slug, $THEME->script_directory . $slug . '.js', array('universal'), $THEME->theme_version );
     FWD::the_component( null, 'meta/foot' );
     ?>
   </body>

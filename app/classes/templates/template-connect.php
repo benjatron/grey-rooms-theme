@@ -16,8 +16,7 @@ class Template_Connect extends FWD_Template {
       "patreon" => get_field( "{$this->slug}_patreon" ),
       "social" => get_field( "{$this->slug}_social" ),
       "merchandise" => get_field( "{$this->slug}_merchandise" ),
-      "paypal" => get_field( "{$this->slug}_paypal" ),
-      "advertising" => get_field( "{$this->slug}_advertising" )
+      "paypal" => get_field( "{$this->slug}_paypal" )
 
     );
 
