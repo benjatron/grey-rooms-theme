@@ -30,14 +30,14 @@ $paypal = $connect['paypal'];
       viewBox="0 0 16 16">
         <?php FWD::the_svg( 'connect-corner' ); ?>
       </svg>
-      <svg class="<?= $block; ?>__spacer <?= $block; ?>__spacer--horizontal <?= $block; ?>__spacer--top" preserveAspectRatio="none" viewBox="0 0 16 16">
+      <svg class="<?= $block; ?>__spacer-horizontal" preserveAspectRatio="none" viewBox="0 0 16 16">
         <rect class="cls-1" width="100%" height=".15rem" y="3.5"></rect>
         <rect class="cls-1" width="100%" height=".15rem" y="12.75"></rect>
       </svg>
       <svg class="<?= $block; ?>__cross <?= $block; ?>__cross--horizontal <?= $block; ?>__cross--top" viewBox="0 0 16 16">
         <?php FWD::the_svg( 'connect-cross' ); ?>
       </svg>
-      <svg class="<?= $block; ?>__spacer <?= $block; ?>__spacer--horizontal <?= $block; ?>__spacer--top" preserveAspectRatio="none" viewBox="0 0 16 16">
+      <svg class="<?= $block; ?>__spacer-horizontal" preserveAspectRatio="none" viewBox="0 0 16 16">
         <rect class="cls-1" width="100%" height=".15rem" y="3.5"></rect>
         <rect class="cls-1" width="100%" height=".15rem" y="12.75"></rect>
       </svg>
@@ -46,24 +46,32 @@ $paypal = $connect['paypal'];
       </svg>
     </div>
     <div class="<?= $block; ?>__masthead-lower">
-      <svg class="<?= $block; ?>__spacer <?= $block; ?>__spacer--vertical <?= $block; ?>__spacer--left" viewBox="0 0 16 16">
+      <svg class="<?= $block; ?>__spacer-vertical <?= $block; ?>__spacer-vertical--left" preserveAspectRatio="none" viewBox="0 0 16 16">
+        <rect class="cls-1" width=".15rem" height="100%" x="3.5"></rect>
+        <rect class="cls-1" width=".15rem" height="100%" x="12.75"></rect>
       </svg>
-      <svg class="<?= $block; ?>__menu-logo" viewBox="0 0 16 16">
+      <svg class="<?= $block; ?>__desktop-logo" viewBox="0 0 16 6">
+        <?php FWD::the_svg( 'connect-logo' ); ?>
       </svg>
-      <svg class="<?= $block; ?>__spacer <?= $block; ?>__spacer--vertical <?= $block; ?>__spacer--right" viewBox="0 0 16 16">
+      <svg class="<?= $block; ?>__spacer-vertical <?= $block; ?>__spacer-vertical--right" preserveAspectRatio="none" viewBox="0 0 16 16">
+        <rect class="cls-1" width=".15rem" height="100%" x="3.5"></rect>
+        <rect class="cls-1" width=".15rem" height="100%" x="12.75"></rect>
       </svg>
     </div>
   </div>
 
   <div class="<?= $block; ?>__content">
     <div class="<?php echo $block; ?>__left-edge">
-      
+      <svg class="<?= $block; ?>__spacer-vertical <?= $block; ?>__spacer-vertical--left" preserveAspectRatio="none" viewBox="0 0 16 16">
+        <rect class="cls-1" width=".15rem" height="100%" x="3.5"></rect>
+        <rect class="cls-1" width=".15rem" height="100%" x="12.75"></rect>
+      </svg>
     </div>
   
     <div class="<?php echo $block; ?>__left">
   
       <?php // Discord ?>
-      <div class="<?php echo $block; ?>__discord">
+      <div class="<?php echo $block; ?>__section <?php echo $block; ?>__section--discord">
         <h2 class="<?php echo $block; ?>__heading">
           - <?php echo $discord['heading']; ?> -
         </h2>
@@ -72,6 +80,7 @@ $paypal = $connect['paypal'];
         </div>
         <a class="<?php echo $block; ?>__link" href="<?php echo $discord['button_link']; ?>">
           <svg class="<?php echo $block; ?>__icon" viewBox="0 0 16 16">
+            <?php FWD::the_svg( 'social-discord' ); ?>
           </svg>
           <h3 class="<?php echo $block; ?>__label">
             <?php echo $discord['button_label']; ?>
@@ -80,7 +89,7 @@ $paypal = $connect['paypal'];
       </div>
   
       <?php // Patreon ?>
-      <div class="<?php echo $block; ?>__patreon">
+      <div class="<?php echo $block; ?>__section <?php echo $block; ?>__section--patreon">
         <h2 class="<?php echo $block; ?>__heading">
           - <?php echo $patreon['heading']; ?> -
         </h2>
@@ -89,6 +98,7 @@ $paypal = $connect['paypal'];
         </div>
         <a class="<?php echo $block; ?>__link" href="<?php echo $patreon['button_link']; ?>">
           <svg class="<?php echo $block; ?>__icon" viewBox="0 0 16 16">
+            <?php FWD::the_svg( 'social-patreon' ); ?>
           </svg>
           <h3 class="<?php echo $block; ?>__label">
             <?php echo $patreon['button_label']; ?>
@@ -97,7 +107,7 @@ $paypal = $connect['paypal'];
       </div>
   
       <?php // Social ?>
-      <div class="<?php echo $block; ?>__social">
+      <div class="<?php echo $block; ?>__section <?php echo $block; ?>__section--social">
         <h2 class="<?php echo $block; ?>__heading">
           - <?php echo $social['heading']; ?> -
         </h2>
@@ -110,15 +120,16 @@ $paypal = $connect['paypal'];
             $url = $network['url'];
           ?>
             <div class="<?php echo $block; ?>__network <?php echo $block; ?>__network--<?php echo $name; ?>">
-              <a class="<?php echo $block; ?>__social-link" href="<?php echo $url; ?>">
-                <svg class="<?php echo $block; ?>__social-icon" viewBox="0 0 16 16">
+              <a class="<?php echo $block; ?>__link <?php echo $block; ?>__link--social" href="<?php echo $url; ?>">
+                <svg class="<?php echo $block; ?>__icon <?php echo $block; ?>__icon--social" viewBox="0 0 16 16">
+                  <?php FWD::the_svg( 'social-' . $name ); ?>
                 </svg>
               </a>
               <div class="<?php echo $block; ?>__social-content">
-                <h3 class="<?php echo $block; ?>__social-headline">
+                <h3 class="<?php echo $block; ?>__heading <?php echo $block; ?>__heading--social">
                   <?php echo $headline; ?>
                 </h3>
-                <div class="<?php echo $block; ?>__social-description">
+                <div class="<?php echo $block; ?>__description <?php echo $block; ?>__description--social">
                   <?php echo $description; ?>
                 </div>
               </div>
@@ -132,12 +143,21 @@ $paypal = $connect['paypal'];
     </div>
   
     <div class="<?php echo $block; ?>__middle">
+      <svg class="<?= $block; ?>__key-1" viewBox="0 0 16 16">
+        <?php FWD::the_svg( 'connect-key01' ); ?>
+      </svg>
+      <svg class="<?= $block; ?>__middle-spacer" preserveAspectRatio="none" viewBox="0 0 16 16">
+        <rect class="cls-1" width=".15rem" height="100%" x="7.925"></rect>
+      </svg>
+      <svg class="<?= $block; ?>__key-2" viewBox="0 0 16 16">
+        <?php FWD::the_svg( 'connect-key02' ); ?>
+      </svg>
     </div>
   
     <div class="<?php echo $block; ?>__right">
   
       <?php // Merchandise ?>
-      <div class="<?php echo $block; ?>__merchandise">
+      <div class="<?php echo $block; ?>__section <?php echo $block; ?>__section--merchandise">
         <h2 class="<?php echo $block; ?>__heading">
           <?php echo $merchandise['headline']; ?>
         </h2>
@@ -162,25 +182,33 @@ $paypal = $connect['paypal'];
       </div>
   
       <?php // PayPal ?>
-      <div class="<?php echo $block; ?>__paypal">
+      <div class="<?php echo $block; ?>__section <?php echo $block; ?>__section--paypal">
         <h2 class="<?php echo $block; ?>__heading">
           <?php echo $paypal['headline']; ?>
         </h2>
-        <a class="<?php echo $block; ?>__link" href="<?php echo $paypal['url']; ?>">
-          <svg class="<?php echo $block; ?>__icon <?php echo $block; ?>__icon--paypal" viewBox="0 0 16 16">
+        <a class="<?php echo $block; ?>__link <?php echo $block; ?>__link--paypal" href="<?php echo $paypal['url']; ?>">
+          <svg class="<?php echo $block; ?>__icon <?php echo $block; ?>__icon--paypal" viewBox="0 0 16 4">
+            <?php FWD::the_svg( 'connect-paypal' ); ?>
           </svg>
         </a>
       </div>
   
       <?php // Advertising ?>
-      <div class="<?php echo $block; ?>__advertising">
-        <a class="<?php echo $block; ?>__link <?php echo $block; ?>__link--advertising" href="">
+      <div class="<?php echo $block; ?>__section <?php echo $block; ?>__section--advertising">
+        <a class="<?php echo $block; ?>__link <?php echo $block; ?>__link--advertising" href="mailto:advertising@thegreyrooms.com">
+          <svg class="<?= $block; ?>__icon <?= $block; ?>__icon--advertising" viewBox="0 0 16 16">
+            <?php FWD::the_svg( 'connect-advertise' ); ?>
+          </svg>
         </a>
       </div>
   
     </div>
   
     <div class="<?php echo $block; ?>__right-edge">
+      <svg class="<?= $block; ?>__spacer-vertical <?= $block; ?>__spacer-vertical--left" preserveAspectRatio="none" viewBox="0 0 16 16">
+        <rect class="cls-1" width=".15rem" height="100%" x="3.5"></rect>
+        <rect class="cls-1" width=".15rem" height="100%" x="12.75"></rect>
+      </svg>
     </div>
   </div>
 
@@ -194,14 +222,14 @@ $paypal = $connect['paypal'];
     viewBox="0 0 16 16">
       <?php FWD::the_svg( 'connect-corner' ); ?>
     </svg>
-    <svg class="<?= $block; ?>__spacer <?= $block; ?>__spacer--horizontal <?= $block; ?>__spacer--bottom" preserveAspectRatio="none" viewBox="0 0 16 16">
+    <svg class="<?= $block; ?>__spacer <?= $block; ?>__spacer-horizontal <?= $block; ?>__spacer-horizontal--bottom" preserveAspectRatio="none" viewBox="0 0 16 16">
       <rect class="cls-1" width="100%" height=".15rem" y="3.5"></rect>
       <rect class="cls-1" width="100%" height=".15rem" y="12.75"></rect>
     </svg>
     <svg class="<?= $block; ?>__cross <?= $block; ?>__cross--horizontal <?= $block; ?>__cross--bottom" viewBox="0 0 16 16">
       <?php FWD::the_svg( 'connect-cross' ); ?>
     </svg>
-    <svg class="<?= $block; ?>__spacer <?= $block; ?>__spacer--horizontal <?= $block; ?>__spacer--bottom" preserveAspectRatio="none" viewBox="0 0 16 16">
+    <svg class="<?= $block; ?>__spacer <?= $block; ?>__spacer-horizontal <?= $block; ?>__spacer-horizontal--bottom" preserveAspectRatio="none" viewBox="0 0 16 16">
       <rect class="cls-1" width="100%" height=".15rem" y="3.5"></rect>
       <rect class="cls-1" width="100%" height=".15rem" y="12.75"></rect>
     </svg>
