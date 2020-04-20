@@ -15,34 +15,46 @@
   width: 60%;
 }
 
+.homepage-body__bottom {
+  color: $grey-blue;
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding-bottom: .5rem;
+
+  @media( min-width: 960px ) {
+    font-weight: 600;
+  }
+}
+
 .homepage-body__heading {
   font-family: $font-heading;
   font-size: 1.5rem;
   padding: .5rem 0;
 
-  @media( min-width: 640px ) {
+  @media( min-width: 960px ) {
     font-size: 2rem;
   }
 }
 
 .homepage-body__subhead {
+  color: $grey-blue;
   font-family: $font-body;
-  font-size: .875rem;
-  line-height: 1;
+  font-size: 1.25rem;
+  line-height: 1.2;
   margin: auto;
-  padding: 0;
-  transition: font-size 300ms ease,
-    line-height 300ms ease;
-  width: 15rem;
+  max-width: 800px;
+  padding: 1rem 0;
+  transition: font-size 300ms ease;
+  width: 80%;
 
-  @media( min-width: 640px ) {
-    font-size: 1.125rem;
-    line-height: .8;
-    width: 100%;
+  @media( min-width: 960px ) {
+    font-size: 1.5rem;
+    padding: 2rem 0;
   }
 }
 
 .homepage-body__text {
   color: $white;
   padding: .5rem 0;
+  width: 100%;
 }

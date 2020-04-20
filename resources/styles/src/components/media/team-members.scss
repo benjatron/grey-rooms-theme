@@ -47,7 +47,7 @@
 }
 
 .team-members__person {
-  padding-bottom: 1.5rem;
+  padding: 1.5rem;
   text-align: center;
   width: 10rem;
 
@@ -59,7 +59,7 @@
 .team-members__people {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin: 0 auto;
   max-width: 800px;
   padding: 1rem 0;

@@ -152,7 +152,26 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "One door leads to your torment, the other will lead to your Salvation.<br\/>Which will you choose?",
+            "default_value": "One door leads to your torment, the other will lead to your Salvation.",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e9d1a03248d7",
+            "label": "Body Bottom",
+            "name": "homepage_bottom",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Which will you choose?",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -178,5 +197,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1587314299
+    "modified": 1587354139
 }

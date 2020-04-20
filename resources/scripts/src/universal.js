@@ -9,7 +9,7 @@ import '../../styles/src/universal.scss';
  * Vendor libraries and plugin settings
  */
 // Cookie consent
-import './vendor/cookieconsent';
+// import './vendor/cookieconsent';
 // Dialog polyfill
 import './vendor/dialog-polyfill';
 // Instant.page
@@ -37,3 +37,4 @@ for (var i=0; i<vidDefer.length; i++) {
  * Universal components
  */
 import './components/universal/navigation';
+import './components/universal/cta';

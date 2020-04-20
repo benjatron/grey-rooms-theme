@@ -9,12 +9,14 @@ $top = $COMPONENT;
 $block = "homepage-top"; // The base block class
 
 $background = $top['background'];
+$mobile = $top['mobileBackground'];
 $disclaimer = $top['disclaimer'];
 $slider = $top['slider'];
 $slogan = $top['slogan'];
 ?>
 <div class="<?php echo $block; ?>">
-  <?php FWD::the_lazy_image( "{$block}__background", $background ); ?>
+  <?php FWD::the_lazy_image( "{$block}__background {$block}__background--mobile", $mobile, 960, true ); ?>
+  <?php FWD::the_lazy_image( "{$block}__background {$block}__background--desktop", $background ); ?>
   <div class="<?= $block; ?>__content">
     <div class="<?php echo $block; ?>__disclaimer">
       <?php echo $disclaimer; ?>

@@ -39,6 +39,7 @@
   "dependencies": {
     "cookieconsent": "^3.1.1",
     "dialog-polyfill": "^0.5.1",
+    "elevator.js": "^1.0.1",
     "instant.page": "^3.0.0",
     "lazysizes": "^5.2.0",
     "mmenu-js": "^8.5.4",

@@ -31,4 +31,16 @@ $buttons = $contents['buttons'];
     endforeach;
     ?>
   </div>
+  <?php
+  // On the front page, show a scroll to top button
+  if( is_front_page() ):
+  ?>
+    <div class="<?= $block; ?>__back-to-top">
+      <h3 class="<?= $block; ?>__top-text">
+        Back to Top
+      </h3>
+    </div>
+  <?php
+  endif;
+  ?>
 </div>

@@ -16,6 +16,7 @@ class Template_Homepage extends FWD_Template {
     $this->top_content = array(
 
       'background' => get_field( "{$this->slug}_background" ),
+      'mobileBackground' => get_field( "{$this->slug}_mobileBackground" ),
       'disclaimer' => FWD_Helper::get_nowrap_field( "{$this->slug}_disclaimer" ),
       'slider' => new Component_Episode_Slider(),
       'slogan' => get_field( "{$this->slug}_slogan"),
@@ -26,7 +27,8 @@ class Template_Homepage extends FWD_Template {
 
       'background' => get_field( "site_general", 'option' )['background_image'],
       'heading' => get_field( "{$this->slug}_heading" ),
-      'subhead' => get_field( "{$this->slug}_subhead" )
+      'subhead' => get_field( "{$this->slug}_subhead" ),
+      'bottom' => get_field( "{$this->slug}_bottom" ),
 
     );
   }
