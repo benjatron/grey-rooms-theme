@@ -24,6 +24,8 @@
 
 .navigation__icon {
   @include size(2rem);
+  filter: drop-shadow(.0625rem .0625rem 0 $black-50);
+  fill: $blue-key;
   margin: 2rem;
 }
 
