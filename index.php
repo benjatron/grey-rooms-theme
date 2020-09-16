@@ -23,6 +23,9 @@ $slug = $template->slug;
     FWD::the_layout( 'body-open' );
     ?>
     <div id="<?php echo $slug; ?>__wrapper">
+      <?php
+      the_content();
+      ?>
     </div>
     <?php
     // Footer meta and scripts
