@@ -6,7 +6,7 @@
     "build": "webpack --config config/webpack.config.js",
     "watch": "webpack --watch --config config/webpack.config.js"
   },
-  "repository": "https://github.com/designfwd/fwd-boilerplate-theme.git",
+  "repository": "https://github.com/benjatron/grey-rooms-theme",
   "author": "FWD Creative LLC",
   "license": "GPL-3.0",
   "browserslist": [
