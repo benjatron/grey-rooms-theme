@@ -193,7 +193,7 @@ class FWD_Setup {
   *
   * @var array $slugs      An array of file names to register
   */
-  function register_all( $slugs = array() ) {
+  public function register_all( $slugs = array() ) {
     // Do not execute if using an empty array
     if( !empty( $slugs ) ):
       foreach( $slugs as $slug ):
