@@ -2,7 +2,7 @@
 // Noscript option for Google Tag Manager
 
 // Get Google Tag Manager data from passed $COMPONENT
-$gtm = ( $COMPONENT ? $COMPONENT : array('active'=>false) );
+$gtm = $COMPONENT['gtm'];
 if( true === $gtm['active'] ):
   $id = $gtm['id'];
 ?>

@@ -1,0 +1,76 @@
+// Call-to-action styles
+
+.cta {
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.cta__back-to-top {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cta__buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: .5rem 0;
+  width: 100%;
+
+  @media( min-width: 640px ) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.cta__headline {
+  color: black( 255, .4985 );
+  font-family: $font-heading;
+  font-size: 2.25rem;
+  margin-top: .25rem;
+  width: 100%;
+}
+
+.cta__link {
+  background-color: $blue-dark;
+  border-radius: .5rem;
+  color: black( 255, .4985 );
+  font-family: $font-body;
+  font-size: 1.3125rem;
+  margin: .5rem;
+  padding: .5rem;
+  transition: background-color 300ms ease,
+    color 300ms ease;
+  width: 16rem;
+
+  &:hover {
+    background-color: $grey-blue;
+    color: $blue-white;
+  }
+}
+
+.cta__top-text{
+  color: $white;
+  cursor: pointer;
+  font-size: 1.125rem;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+  transition: color 300ms ease;
+
+  &:hover {
+    color: $blue-dark;
+  }
+
+  @media( min-width: 960px ) {
+    color: $grey-blue;
+    font-size: 2.25rem;
+    padding: 2rem;
+  }
+}

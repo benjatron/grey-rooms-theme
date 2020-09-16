@@ -26,17 +26,14 @@ class FWD_Setup {
   // Directory of compiled script files
   public $script_directory;
 
-  // Directory of compiled style files
+  // Directory of compiles style files
   public $style_directory;
-
-  // Directory of page template files
-  public $template_directory;
 
   // Array of templates
   public $templates;
 
   // Version of the theme used for cache-busting purposes
-  public $theme_version = "1.0";
+  public $theme_version;
 
   public function __construct() {
 
@@ -51,18 +48,11 @@ class FWD_Setup {
     $this->layout_directory =  'page-templates/layouts/';
     $this->script_directory = get_stylesheet_directory_uri() . '/resources/scripts/dist/';
     $this->style_directory = get_stylesheet_directory_uri() . '/resources/styles/dist/';
-    $this->template_directory = '/page-templates/';
 
     $this->set_theme_supports();
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ), 100 );
     $this->set_acf_json_locations();
     $this->create_theme_settings_page();
-
-    /**
-     * Speed up ACF backend loading time
-     * @see https://www.advancedcustomfields.com/blog/acf-pro-5-5-13-update/
-     */
-    add_filter('acf/settings/remove_wp_meta_box', '__return_true');
 
   }
 
@@ -192,7 +182,7 @@ class FWD_Setup {
   */
   public function register( $slug ) {
     wp_register_script( $slug, $this->script_directory . $slug . '.js', array( 'universal' ), $this->theme_version, true );
-    wp_register_style( $slug, $this->style_directory . $slug . '.css', array('universal'), $this->theme_version );
+    wp_register_style( $slug, $this->style_directory . $slug . '.css', array('universal'), $this->theme_version, 'all' );
   }
 
   /**

@@ -23,7 +23,7 @@ class FWD_Component {
       $this->acf_id = get_the_ID();
     endif;
 
-    $this->contents = (object) get_field( $this->acf_field, $this->acf_id );
+    $this->contents = get_field( $this->acf_field, $this->acf_id );
 
     $this->build_component();
   }

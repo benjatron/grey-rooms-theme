@@ -1,0 +1,12 @@
+// Mmenu custom build
+// * Base directory: '~mmenu-js/src/';
+
+// Core
+@import '~mmenu-js/src/core/oncanvas/mmenu.oncanvas';
+
+// Core add-ons
+@import '~mmenu-js/src/core/offcanvas/mmenu.offcanvas';
+@import '~mmenu-js/src/core/screenreader/mmenu.screenreader';
+
+// Extensions
+@import '~mmenu-js/src/extensions/positioning/mmenu.positioning';

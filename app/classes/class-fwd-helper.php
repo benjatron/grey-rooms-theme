@@ -30,7 +30,7 @@ abstract class FWD_Helper {
    * hack is necessary. To cut down on typing and improve readability, this
    * function imports a layout partial and keeps variables accessible.
    *
-   * @var object $COMPONENT   The object to pass to the component
+   * @var object $object      The object to pass to the component
    * @var string $location    The location of the layout partial (without 
    *                          extension) within the components folder
    *
@@ -44,7 +44,7 @@ abstract class FWD_Helper {
     if( locate_template( $THEME->component_directory . $location . '.php', false, false ) ):
       return include( locate_template( $THEME->component_directory . $location . '.php', false, false ) );
     else:
-      FWD_Helper::console_log( "FWD_Helper::the_component( '{$COMPONENT}, {$location}' ) failed" );
+      FWD_Helper::console_log( "FWD_Helper::the_component( '{$location}' ) failed" );
     endif;
   }
 
@@ -54,37 +54,18 @@ abstract class FWD_Helper {
    * Layouts are a combination of components and common code that can be included
    * as one function instead of repeated get_component() calls or repeated code.
    *
-   * @var object $COMPONENT   The object to pass to the component
    * @var string $slug        The name of the partial file, without file extension
    *
    * @return mixed            The template file referenced
    */
-  public function the_layout( $COMPONENT, $slug ) {
+  public function the_layout( $slug ) {
     // Uses $THEME values
     global $THEME;
 
     if( locate_template( $THEME->layout_directory . $slug . '.php', false, false ) ):
       return include( locate_template( $THEME->layout_directory . $slug . '.php', false, false ) );
     else:
-      FWD_Helper::console_log( "FWD_Helper::the_layout( '{$COMPONENT}, {$slug}' ) failed" );
-    endif;
-  }
-
-  /**
-   * Includes a page template file
-   *
-   * @var string $slug      The name of the partial file, without file extension
-   *
-   * @return mixed          The template file referenced
-   */
-  public function the_template( $slug ) {
-    // Uses $THEME values
-    global $THEME;
-
-    if( locate_template( $THEME->template_directory . $slug . '.php', false, false ) ):
-      return include( locate_template( $THEME->template_directory . $slug . '.php', false, false ) );
-    else:
-      FWD_Helper::console_log( "FWD_Helper::the_template( '{$slug}' ) failed" );
+      FWD_Helper::console_log( "FWD_Helper::the_layout( '{$slug}' ) failed" );
     endif;
   }
 
@@ -123,15 +104,13 @@ abstract class FWD_Helper {
    *
    * By default, the WYSIWYG editor in ACF will output paragraph tags
    * automatically. In cases where there is only one paragraph, this can
-   * sometimes cause spacing issues. This function "gets" the field without 
-   * those tags. Note: Only works with ACF WYSIWYG editor fields.
+   * sometimes cause spacing issues. This function "gets" the field without those
+   * tags. Note: Only works with ACF WYSIWYG editor fields.
    *
    * @var string $field_name       The name of the field affected
    * @var string $id               The ID of the post where the field is located
    *                                (defaults to current post)
    * @link https://support.advancedcustomfields.com/forums/topic/removing-paragraph-tags-from-wysiwyg-fields/
-   * 
-   * @return mixed                 The field's contents
    */
   function get_nowrap_field( $field_name, $id='' ) {
     if( $id=='' ):
@@ -148,10 +127,15 @@ abstract class FWD_Helper {
   /**
    * Echoes fields from get_nowrap_field()
    *
+   * By default, the WYSIWYG editor in ACF will output paragraph tags
+   * automatically. In cases where there is only one paragraph, this can
+   * sometimes cause spacing issues. This function "gets" the field without those
+   * tags. Note: Only works with ACF WYSIWYG editor fields.
+   *
    * @var string $field_name       The name of the field affected
    * @var string $id               The ID of the post where the field is located
    *                                (defaults to current post)
-   * @return mixed                 HTML markup of the field
+   * @link https://support.advancedcustomfields.com/forums/topic/removing-paragraph-tags-from-wysiwyg-fields/
    */
   function the_nowrap_field( $field_name, $id='' ) {
     echo FWD_Helper::get_nowrap_field( $field_name, $id='' );
@@ -317,6 +301,40 @@ abstract class FWD_Helper {
     echo FWD_Helper::get_svg( $file );
   }
 
+  /**
+   * Creates a human-readable unordered list for sitemap purposes
+   *
+   * @var string $parentClass   The CSS class of the parent element
+   * @var string $links         The array of links to use for the sitemap
+   *
+   * @return mixed              A nested list of links
+   */
+
+  function the_nested_links( $parentClass, $links ) {
+    ?>
+    <ul class="<?php echo $parentClass; ?>__list">
+      <?php
+      foreach( $links as $link ):
+        $item = $link['link'];
+        $title = $item->post_title;
+        $url = get_permalink( $item->ID );
+        ?>
+        <li class="<?php echo $parentClass; ?>__item">
+          <a class="<?php echo $parentClass; ?>__link" href="<?php echo $url; ?>">
+            <?php echo $title; ?>
+          </a>
+          <?php
+          if( $link['check'] ):
+            the_nested_links( $parentClass, $link['children'] );
+          endif;
+          ?>
+        </li>
+        <?php
+      endforeach;
+      ?>
+    </ul>
+    <?php
+  }
 
   /**
    * Using classes and data attributes from Lazysizes, echoes the <img> tag of 
@@ -362,31 +380,6 @@ abstract class FWD_Helper {
 
     // Close the image tag
     echo "\"/>";
-  }
-
-  /**
-   * echoes srcset data for responsive images
-   * 
-   * @var array $image        The array of WordPress image data
-   * @var int $max_width      The widest the image should appear
-   * 
-   * @return string           values to use in a "srcset" attribute
-   */
-  function the_srcset( $image, $max_width = 9999 ) {
-
-    global $THEME;
-    $sizes = $THEME->image_sizes;
-
-    // Echoes the data-srcset values
-    echo "{$image['sizes']['preload']} 64w, ";
-    $w = 65; // Sets initial width needed in for loop
-    for( $i=0; $i<count($sizes); $i++ ):
-      // Only output values if $max_width hasn't been exceeded
-      if( $sizes[$i] <= $max_width ):
-        echo $image['sizes'][$sizes[$i].'w'] . ' ' . $w . 'w, ';
-        $w = ( $sizes[$i] + 1 );
-      endif;
-    endfor;
   }
 
 }

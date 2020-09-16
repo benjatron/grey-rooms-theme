@@ -1,0 +1,22 @@
+@charset 'utf-8';
+
+/*
+ * Styles for the homepage template
+ */
+
+// Starter files
+@import '../starter';
+
+/*
+ * Component imports
+ */
+@import './../components/media/team-members';
+@import './../components/content/about-intro';
+
+/*
+ * Page-specific styles
+ */
+
+.team {
+  color: $white;
+}

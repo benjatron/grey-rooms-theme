@@ -1,7 +1,16 @@
-module.exports = ({ options, env }) => ({
+module.exports = {
   plugins: {
     'autoprefixer': {},
-    'cssnano': env === 'production' ? options.cssnano : false,
+    'cssnano': {
+      preset: [
+        'default',
+        {
+          discardComments: {
+            removeAll: true
+          }
+        }
+      ]
+    },
     'postcss-dialog-polyfill': {}
   }
-})
+}

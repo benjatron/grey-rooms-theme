@@ -7,5 +7,10 @@
 import '../../../styles/src/pages/homepage.scss';
 
 /*
+ * Component imports
+ */
+import '../components/media/episode-slider';
+
+/*
  * Page-specific scripting
  */

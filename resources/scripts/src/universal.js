@@ -9,13 +9,15 @@ import '../../styles/src/universal.scss';
  * Vendor libraries and plugin settings
  */
 // Cookie consent
-import './vendor/cookieconsent';
+// import './vendor/cookieconsent';
 // Dialog polyfill
 import './vendor/dialog-polyfill';
 // Instant.page
 import './vendor/instant-page';
 // Lazysizes
 import './vendor/lazysizes';
+// Mmenu
+import './vendor/mmenu';
 // Smoothscroll Polyfill
 import './vendor/smoothscroll-polyfill';
 
@@ -30,3 +32,9 @@ for (var i=0; i<vidDefer.length; i++) {
     vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
   }
 }
+
+/**
+ * Universal components
+ */
+import './components/universal/navigation';
+import './components/universal/cta';

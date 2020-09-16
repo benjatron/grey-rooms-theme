@@ -1,0 +1,39 @@
+@charset 'utf-8';
+
+/*
+ * Styles for the homepage template
+ */
+
+// Starter files
+@import '../starter';
+
+/*
+ * Component imports
+ */
+@import '../components/media/episodes';
+
+/*
+ * Page-specific styles
+ */
+// .seasons {}
+
+.seasons__background {
+  width: 100%;
+}
+
+.seasons__episodes {
+  margin-top: -8rem;
+  z-index: 2;
+
+  @media( min-width: 800px ) {
+    margin-top: -16rem;
+  }
+
+  @media( min-width: 1200px ) {
+    margin-top: -24rem;
+  }
+
+  @media( min-width: 1600px ) {
+    margin-top: -32rem;
+  }
+}

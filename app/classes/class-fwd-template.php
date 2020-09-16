@@ -11,32 +11,30 @@ class FWD_Template {
   // The slug of the page template used
   public $slug;
 
-  public function __construct( $slug = null ) {
+  public function __construct() {
 
     $this->id = get_the_ID();
-    if( $slug != null ):
-      $this->slug = $slug;
-    else:
-      $this->slug = $this->get_template_slug();
-    endif;
+    $this->slug = $this->get_template_slug();
 
-    $this->meta = new FWD_Component( 'site_meta', 'option' );
+    $this->build_components();
 
-    $this->build_template();
-
-  }
-
-  public function build_template() {
-    // Meant to be created per template
+    $this->footer = new Component_Footer( 'site_footer', 'option' );
+    $this->navigation = new Component_Navigation( 'site_general', 'option' );
+    $this->cta = new Component_CTA( 'site_cta', 'option' );
   }
 
   /**
- * Returns a page template slug without a prefix directory and ending '.php'
- *
- * @var string $id      (optional) The id of the post being queried
- *
- * @return string       The truncated page template slug
- */
+   * Generic component builder. Meant to be overwritten
+   */
+  public function build_components() {}
+
+  /**
+   * Returns a page template slug without a prefix directory and ending '.php'
+   *
+   * @var string $id      (optional) The id of the post being queried
+   *
+   * @var string $result  The truncated page template slug
+   */
   public function get_template_slug() {
     $slug = get_page_template_slug( $this->page_id );
 

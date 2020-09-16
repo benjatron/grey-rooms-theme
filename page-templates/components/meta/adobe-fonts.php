@@ -2,7 +2,7 @@
 // Adobe Fonts integration
 
 // Get Adobe Fonts data from passed $COMPONENT
-$fonts = ( $COMPONENT ? $COMPONENT : array('active'=>false) );
+$fonts = $COMPONENT['adobe_fonts'];
 if( true === $fonts['active'] ):
   $id = $fonts['id'];
 ?>

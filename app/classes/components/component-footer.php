@@ -5,10 +5,30 @@
  */
 class Component_Footer extends FWD_Component {
 
-  // Component variables
+  // Quick link menu arguments
+  public $menu;
+
+  // Contact page
+  public $contact_page;
+
+  // Social networks
+  public $social_networks;
 
   public function build_component() {
-    // Meant to be created per component
+
+    $general = get_field( 'site_general', 'option' );
+
+    $this->contact_page = $general['contact_page'];
+    $this->social_networks = $general['social'];
+
+    $this->menu = array(
+      'menu_location' => 'quick_links',
+      'menu_class' => 'footer',
+      'menu_id' => 'footer-quicklinks',
+      'toggles' => false,
+      'toggle_icon' => '&plus;',
+      'top_links' => true
+    );
   }
 
 }

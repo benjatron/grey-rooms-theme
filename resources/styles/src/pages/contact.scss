@@ -1,0 +1,56 @@
+@charset 'utf-8';
+
+/*
+ * Styles for the contact template
+ */
+
+// Starter files
+@import '../starter';
+
+/*
+ * Component imports
+ */
+@import '../components/media/header';
+@import '../components/content/contact-form';
+@import '../components/content/contact';
+
+/*
+ * Page-specific styles
+ */
+// .contact {}
+
+.contact__content {
+  order: 2;
+  width: 100%;
+
+  @media( min-width: 960px ) {
+    order: 1;
+    width: 50%;
+  }
+}
+
+.contact__cta {
+  order: 3;
+  width: 100%;
+}
+
+.contact__form {
+  order: 1;
+  width: 100%;
+
+  @media( min-width: 960px ) {
+    order: 2;
+    width: 50%;
+  }
+}
+
+.contact__main {
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  @media( min-width: 960px ) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

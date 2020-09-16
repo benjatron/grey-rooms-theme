@@ -1,0 +1,43 @@
+// Contact content styles
+
+.contact-content {
+  color: #E6E6E6;
+  border: none;
+  border-top: 1px solid #979797;
+  margin: 0;
+  padding: 2rem 2rem 1rem;
+
+  @media( min-width: 960px ) {
+    border: 1px solid #979797;
+    margin: 2rem;
+    padding: 2rem 1rem 1rem;
+  }
+}
+
+.contact-content__body {
+  margin: 0;
+
+  @media( min-width: 960px ) {
+    margin: 0 2rem;
+  }
+
+  p {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+}
+
+.contact-content__headline {
+  border-bottom: none;
+  font-family: $font-body;
+  font-size: 1.875rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  text-align: left;
+
+  @media( min-width: 960px ) {
+    border-bottom: 1px solid $white;
+    padding: 0 1rem 1rem;
+    text-align: center;
+  }
+}
