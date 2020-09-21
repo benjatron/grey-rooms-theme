@@ -123,7 +123,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": false,
+    "active": true,
     "description": "",
-    "modified": 1600650652
+    "modified": 1600651049
 }
