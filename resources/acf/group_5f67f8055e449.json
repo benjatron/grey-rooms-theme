@@ -59,11 +59,11 @@
                         "id": ""
                     },
                     "choices": [],
-                    "default_value": [],
+                    "default_value": false,
                     "allow_null": 0,
-                    "multiple": 1,
-                    "ui": 1,
-                    "ajax": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
                     "return_format": "array",
                     "placeholder": ""
                 },
@@ -103,5 +103,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600649809
+    "modified": 1600650252
 }
