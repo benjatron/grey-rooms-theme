@@ -5,7 +5,7 @@
         {
             "key": "field_5f67fd0c1958e",
             "label": "Banner Image",
-            "name": "banner_image",
+            "name": "post-archive_banner-image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -29,7 +29,7 @@
         {
             "key": "field_5f67fd251958f",
             "label": "Blog Intro Heading",
-            "name": "heading",
+            "name": "post-archive_heading",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -48,7 +48,7 @@
         {
             "key": "field_5f67fd2e19590",
             "label": "Intro Content",
-            "name": "intro_content",
+            "name": "post-archive_intro-content",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -67,7 +67,7 @@
         {
             "key": "field_5f67fd4119591",
             "label": "Intro Signature Graphic",
-            "name": "signature",
+            "name": "post-archive_signature",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -91,7 +91,7 @@
         {
             "key": "field_5f67fd5819592",
             "label": "Post Archive Heading",
-            "name": "archive_heading",
+            "name": "post-archive_archive-heading",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -125,5 +125,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600651049
+    "modified": 1600736670
 }
