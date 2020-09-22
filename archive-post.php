@@ -1,7 +1,7 @@
 <?php
 use FWD_Helper as FWD;
 
-$template = new Template_Archive_Post;
+$template = new Template_Post_Archive( 'post-archive' );
 $slug = $template->slug;
 ?>
 <!doctype html>
@@ -22,7 +22,7 @@ $slug = $template->slug;
     // Body open meta and functions
     FWD::the_layout( 'body-open' );
     ?>
-    <div id="<?php echo $slug; ?>__wrapper">
+    <div id="<?= $slug ?>__wrapper">
     </div>
     <?php
     // Footer meta and scripts
