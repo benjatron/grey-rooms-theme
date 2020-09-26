@@ -4,14 +4,38 @@
     "fields": [
         {
             "key": "field_5f67fd0c1958e",
-            "label": "Banner Image",
-            "name": "post-archive_banner-image",
+            "label": "Banner Image - Desktop",
+            "name": "post-archive_banner-desktop",
             "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "480w",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f6a88851eae4",
+            "label": "Banner Image - Mobile",
+            "name": "post-archive_banner-mobile",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -125,5 +149,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600736670
+    "modified": 1600817361
 }
