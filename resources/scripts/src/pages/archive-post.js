@@ -9,6 +9,7 @@ import '../../../styles/src/pages/archive-post.scss';
 /*
  * Component imports
  */
+import '../components/content/blog-roll';
 
 /*
  * Page-specific scripting
