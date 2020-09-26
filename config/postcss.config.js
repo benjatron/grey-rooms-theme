@@ -10,7 +10,6 @@ module.exports = {
           }
         }
       ]
-    },
-    'postcss-dialog-polyfill': {}
+    }
   }
 }
