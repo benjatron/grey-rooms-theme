@@ -14,19 +14,21 @@ class Template_Post_Archive extends FWD_Template {
   public $archive;
 
   public function build_components() {
-
+    $this->slug = 'post-archive';
+    $id = get_option( 'page_for_posts' );
     $this->banner = array(
-      'image' => get_field( "{$this->slug}_banner-image" )
+      'desktop' => get_field( "{$this->slug}_banner-desktop", $id ),
+      'mobile' => get_field( "{$this->slug}_banner-mobile", $id ),
     );
 
     $this->intro = array(
-      'heading' => get_field( "{$this->slug}_heading"),
-      'content' => get_field( "{$this->slug}_intro-content"),
-      'signature' => get_field( "{$this->slug}_signature")
+      'heading' => get_field( "{$this->slug}_heading", $id ),
+      'content' => get_field( "{$this->slug}_intro-content", $id ),
+      'signature' => get_field( "{$this->slug}_signature", $id )
     );
 
     $this->archive = array(
-      'heading' => get_field( "{$this->slug}_archive-heading")
+      'heading' => get_field( "{$this->slug}_archive-heading", $id )
     );
 
   }
