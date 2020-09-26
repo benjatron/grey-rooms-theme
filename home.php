@@ -29,7 +29,7 @@ $footer = $template->footer;
     // Body open meta and functions
     FWD::the_layout( 'body-open' );
     ?>
-    <div id="<?= $slug ?>__wrapper">
+    <div id="page-wrapper" class="<?= $slug ?>__wrapper">
       <header class="<?= $slug; ?>__header">
         <section class="<?= $slug; ?>__navigation">
           <?php
