@@ -32,7 +32,9 @@ $nextLink = get_next_posts_page_link();
 ?>
   <div class="blog-roll">
     <h2 class="blog-roll__heading">
+      <span class="blog-roll__decoration">&mdash;</span>
       <?= $archive['heading'] ?>
+      <span class="blog-roll__decoration">&mdash;</span>
     </h2>
     <div class="blog-roll__collection">
       <?php

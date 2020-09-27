@@ -20,11 +20,13 @@ module.exports = {
     // Universally-needed JS
     universal: path.resolve(project.scripts, 'src/universal.js'),
     // Page template JS
+    'archive-post': path.resolve(project.scripts, 'src/pages/archive-post.js'),
     connect: path.resolve(project.scripts, 'src/pages/connect.js'),
     contact: path.resolve(project.scripts, 'src/pages/contact.js'),
     episode: path.resolve(project.scripts, 'src/pages/episode.js'),
     homepage: path.resolve(project.scripts, 'src/pages/homepage.js'),
     seasons: path.resolve(project.scripts, 'src/pages/seasons.js'),
+    'post-single': path.resolve( project.scripts, 'src/pages/post-single.js' ),
     team: path.resolve(project.scripts, 'src/pages/team.js')
   },
   output: {

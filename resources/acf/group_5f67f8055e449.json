@@ -50,7 +50,7 @@
                     "label": "Network",
                     "name": "network",
                     "type": "select",
-                    "instructions": "facebook : Facebook\r\ninstragram : Instagram\r\nlinkedin : LinkedIn\r\ntwitter : Twitter",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -58,13 +58,18 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": [],
+                    "choices": {
+                        "facebook": "Facebook",
+                        "instagram": "Instagram",
+                        "linkedin": "LinkedIn",
+                        "twitter": "Twitter"
+                    },
                     "default_value": false,
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
-                    "ajax": 0,
                     "return_format": "array",
+                    "ajax": 0,
                     "placeholder": ""
                 },
                 {
@@ -103,5 +108,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600650252
+    "modified": 1601177196
 }

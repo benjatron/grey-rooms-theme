@@ -1,1 +1,70 @@
 // Blog roll styles
+.blog-roll {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.blog-roll__collection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 1rem;
+  width: 100%;
+
+  @media( min-width: 800px ) {
+    justify-content: flex-start;
+    padding: 2rem;
+  }
+}
+
+.blog-roll__excerpt {
+  font-family: $font-body;
+  margin: 1rem;
+}
+
+.blog-roll__heading {
+  color: black( 90, 1 );
+  font-family: $font-body;
+  font-size: Max( 36px, 9.6vw );
+  text-transform: uppercase;
+
+  @media( min-width: 800px ) {
+    font-size: Min( 36px, 3.5vw );
+  }
+}
+
+.blog-roll__image {
+  height: 290px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.blog-roll__item {
+  background-color: $white;
+  margin: 1rem;
+  width: Min( 290px, 77.33vw );
+}
+
+.blog-roll__pagination {
+  color: $white;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  width: 100%;
+
+  a {
+    padding: .25rem;
+  }
+}
+
+.blog-roll__title {
+  font-family: $font-body;
+  font-size: Max( 24px, 6.4vw );
+  margin: 1rem auto 1rem 1rem;
+
+  @media( min-width: 800px ) {
+    font-size: Min( 24px, 2.34vw );
+  }
+}

@@ -24,7 +24,7 @@ $footer = $template->footer;
     wp_enqueue_style( 'archive-post' );
     ?>
   </head>
-  <body <?php body_class( $slug ); ?>>
+  <body <?php body_class( $slug ); ?> >
     <?php
     // Body open meta and functions
     FWD::the_layout( 'body-open' );
