@@ -42,7 +42,7 @@
     "elevator.js": "^1.0.1",
     "instant.page": "^5.1.0",
     "lazysizes": "^5.2.2",
-    "mmenu-js": "^8.5.16",
+    "mmenu-js": "^8.5.17",
     "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^6.2.0"
   },

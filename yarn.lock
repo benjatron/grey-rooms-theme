@@ -5616,7 +5616,7 @@ mkdirp@^0.5.3:
   dependencies:
     minimist "^1.2.5"
 
-mmenu-js@^8.5.16:
+mmenu-js@^8.5.17:
   version "8.5.17"
   resolved "https://registry.yarnpkg.com/mmenu-js/-/mmenu-js-8.5.17.tgz#d2ba3e1d705ff9f680c5d8281b186a0aae66d773"
   integrity sha512-TeYK2dTSe9IdeahKTwG6Z0v7iNb3IWN2TqdIyQ7FcOCFBIqg43lonZYRs/wLCpMO7TFbOlrtv1o1mmpRjnKdAA==
