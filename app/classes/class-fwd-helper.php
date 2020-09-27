@@ -382,4 +382,30 @@ abstract class FWD_Helper {
     echo "\"/>";
   }
 
+
+  /**
+   * echoes srcset data for responsive images
+   * 
+   * @var array $image        The array of WordPress image data
+   * @var int $max_width      The widest the image should appear
+   * 
+   * @return string           values to use in a "srcset" attribute
+   */
+  function the_srcset( $image, $max_width = 9999 ) {
+
+    global $THEME;
+    $sizes = $THEME->image_sizes;
+
+    // Echoes the data-srcset values
+    echo "{$image['sizes']['preload']} 64w, ";
+    $w = 65; // Sets initial width needed in for loop
+    for( $i=0; $i<count($sizes); $i++ ):
+      // Only output values if $max_width hasn't been exceeded
+      if( $sizes[$i] <= $max_width ):
+        echo $image['sizes'][$sizes[$i].'w'] . ' ' . $w . 'w, ';
+        $w = ( $sizes[$i] + 1 );
+      endif;
+    endfor;
+  }
+
 }

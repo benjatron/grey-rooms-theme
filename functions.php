@@ -52,7 +52,13 @@ $THEME->set_the_excerpt();
 
 // Registers page templates for the theme
 $THEME->templates = array(
+  'connect',
+  'contact',
+  'episode',
   'homepage',
+  'archive-post',
+  'seasons',
+  'post-single',
   'team',
 );
 
