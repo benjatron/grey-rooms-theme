@@ -9,6 +9,8 @@ $navigation = $template->navigation;
 $desktop = $template->desktop_image;
 $mobile = $template->mobile_image;
 
+$subhead = $template->subhead;
+
 $blog_post = $template->blog_post;
 $author = $template->author;
 $episode = $template->episode;
@@ -87,6 +89,15 @@ $twitter_share = 'https://twitter.com/intent/tweet?url=' . urlencode(get_permali
           <h1 class="<?= $slug ?>__headline">
             <?= $blog_post['title'] ?>
           </h1>
+          <?php
+          if( $subhead ):
+          ?>
+            <h2 class="<?= $slug ?>__subhead">
+              <?= $subhead ?>
+            </h2>
+          <?php
+          endif;
+          ?>
           <article class="<?= $slug ?>__body">
             <?= the_content(); ?>
           </article>
