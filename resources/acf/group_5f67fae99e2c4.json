@@ -71,6 +71,25 @@
             "multiple": 0,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_5f750417ce3bc",
+            "label": "Subheading",
+            "name": "subhead",
+            "type": "text",
+            "instructions": "Optional text to show underneath the title",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -92,5 +111,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1600909797
+    "modified": 1601504322
 }
