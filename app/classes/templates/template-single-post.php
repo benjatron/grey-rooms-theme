@@ -8,6 +8,7 @@ class Template_Single_Post extends FWD_Template {
   public $mobile_image;
 
   public $blog_post;
+  public $subhead = null;
 
   public $author;
 
@@ -22,6 +23,10 @@ class Template_Single_Post extends FWD_Template {
 
     $this->desktop_image = get_field('desktop_image');
     $this->mobile_image = get_field('mobile_image');
+
+    if( get_field('subhead') ):
+      $this->subhead = get_field('subhead');
+    endif;
 
     $this->blog_post = array(
       'id' => $blog_post->ID,
