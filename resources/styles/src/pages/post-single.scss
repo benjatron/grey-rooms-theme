@@ -134,7 +134,7 @@ footer {
   clear: both;
   font-family: $font-body;
   font-size: Max( 32px, 8.53vw );
-  margin: 2rem auto 1rem;
+  margin: 2rem auto .5rem;
   text-align: center;
 
   @media( min-width: 800px ) {
@@ -178,6 +178,14 @@ footer {
 .post-single__share-now {
   font-family: $font-body;
   font-size: 22px;
+}
+
+.post-single__subhead {
+  font-family: $font-body;
+  font-size: 30px;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
 }
 
 .post-single__top-links {
